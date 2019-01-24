@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="Popular Rakdos commanders and decks for EDH / Commander" name="description">
+  <meta content="EDH,Commander,MTG,Magic,recommendations,staples,Rakdos" name="keywords">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>EDHREC - Rakdos</title>
+  <link rel="manifest" href="/js/manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/touch-icon-iphone-114.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/touch-icon-ipad-144.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/touch-icon-iphone-114.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/touch-icon-ipad-144.png" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.5/chosen.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="/css/styles-fc7923b7d7.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span></button>
+          <a class="navbar-brand visible-xs" href="/">
+            <img class="logo" src="/img/banner.png">
+          </a>
+      </div>
+      <!-- Collection of nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- Search Bar 1 of 2 (Mobile) -->
+        <div class="col-sm-3 visible-xs">
+          <form action="/route/" class="navbar-form" method="get" role="search">
+            <div class="input-group">
+              <input autocomplete="off" class="form-control typeahead" data-provide="typeahead" name="cc" placeholder="Search cards" type="search">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+          <!-- Logo -->
+          <a class="navbar-brand hidden-xs" href="/">
+            <img class="logo" src="/img/banner.png">
+          </a>
+          <!-- Articles -->
+          <li>
+            <a href="http://articles.edhrec.com">Articles</a>
+          </li>
+          <!-- Cards -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cards <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <!-- Top Cards -->
+              <li>
+                <a href="/top/">Top Cards</a>
+              </li>
+              <!-- By Type -->
+              <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">By Type</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/top/creatures/">Creatures</a>
+                  </li>
+                  <li>
+                    <a href="/top/instants/">Instants</a>
+                  </li>
+                  <li>
+                    <a href="/top/sorceries/">Sorceries</a>
+                  </li>
+                  <li>
+                    <a href="/top/artifacts/">Artifacts</a>
+                  </li>
+                  <li>
+                    <a href="/top/enchantments/">Enchantments</a>
+                  </li>
+                  <li>
+                    <a href="/top/planeswalkers/">Planeswalkers</a>
+                  </li>
+                  <li>
+                    <a href="/top/lands/">Lands</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- By Color -->
+              <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">By Color</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/top/w/">
+                      <img class="manar" src="/img/w.png">
+                      White
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/top/u/">
+                      <img class="manar" src="/img/u.png">
+                      Blue
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/top/b/">
+                      <img class="manar" src="/img/b.png">
+                      Black
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/top/r/">
+                      <img class="manar" src="/img/r.png">
+                      Red
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/top/g/">
+                      <img class="manar" src="/img/g.png">
+                      Green
+                    </a>
+                  </li>
+                  <li style="padding-top: 11px">
+                    <a href="/top/colorless/">
+                      <img class="manar" src="/img/c.png">
+                      Colorless
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/top/multi/">
+                      <img class="manar" src="/img/multi.png">
+                      Multicolored
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!-- Commanders -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Commanders <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <!-- Top Commanders -->
+              <li>
+                <a href="/commanders/">Top Commanders</a>
+              </li>
+              <!-- Mono Color -->
+              <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mono</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/commanders/w/">
+                      <img class="manar" src="/img/w.png">
+                      White
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/u/">
+                      <img class="manar" src="/img/u.png">
+                      Blue
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/b/">
+                      <img class="manar" src="/img/b.png">
+                      Black
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/r/">
+                      <img class="manar" src="/img/r.png">
+                      Red
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/g/">
+                      <img class="manar" src="/img/g.png">
+                      Green
+                    </a>
+                  </li>
+                  <li style="padding-top: 11px">
+                    <a href="/commanders/colorless/">
+                      <img class="manar" src="/img/c.png">
+                      Colorless
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- 2 Color -->
+              <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">2 Color</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/commanders/wu/">
+                      <img class="mana" src="/img/w.png">
+                      <img class="manar" src="/img/u.png">
+                      Azorius
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/ub/">
+                      <img class="mana" src="/img/u.png">
+                      <img class="manar" src="/img/b.png">
+                      Dimir
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/br/">
+                      <img class="mana" src="/img/b.png">
+                      <img class="manar" src="/img/r.png">
+                      Rakdos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/rg/">
+                      <img class="mana" src="/img/r.png">
+                      <img class="manar" src="/img/g.png">
+                      Gruul
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/gw/">
+                      <img class="mana" src="/img/g.png">
+                      <img class="manar" src="/img/w.png">
+                      Selesnya
+                    </a>
+                  </li>
+                  <li style="padding-top: 11px">
+                    <a href="/commanders/wb/">
+                      <img class="mana" src="/img/w.png">
+                      <img class="manar" src="/img/b.png">
+                      Orzhov
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/ur/">
+                      <img class="mana" src="/img/u.png">
+                      <img class="manar" src="/img/r.png">
+                      Izzet
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/bg/">
+                      <img class="mana" src="/img/b.png">
+                      <img class="manar" src="/img/g.png">
+                      Golgari
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/rw/">
+                      <img class="mana" src="/img/r.png">
+                      <img class="manar" src="/img/w.png">
+                      Boros
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/gu/">
+                      <img class="mana" src="/img/g.png">
+                      <img class="manar" src="/img/u.png">
+                      Simic
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- 3 Color -->
+              <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">3 Color</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/commanders/wub/">
+                      <img class="mana" src="/img/w.png">
+                      <img class="mana" src="/img/u.png">
+                      <img class="manar" src="/img/b.png">
+                      Esper
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/ubr/">
+                      <img class="mana" src="/img/u.png">
+                      <img class="mana" src="/img/b.png">
+                      <img class="manar" src="/img/r.png">
+                      Grixis
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/brg/">
+                      <img class="mana" src="/img/b.png">
+                      <img class="mana" src="/img/r.png">
+                      <img class="manar" src="/img/g.png">
+                      Jund
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/rgw/">
+                      <img class="mana" src="/img/r.png">
+                      <img class="mana" src="/img/g.png">
+                      <img class="manar" src="/img/w.png">
+                      Naya
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/gwu/">
+                      <img class="mana" src="/img/g.png">
+                      <img class="mana" src="/img/w.png">
+                      <img class="manar" src="/img/u.png">
+                      Bant
+                    </a>
+                  </li>
+                  <li style="padding-top: 11px">
+                    <a href="/commanders/wbg/">
+                      <img class="mana" src="/img/w.png">
+                      <img class="mana" src="/img/b.png">
+                      <img class="manar" src="/img/g.png">
+                      Abzan
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/urw/">
+                      <img class="mana" src="/img/u.png">
+                      <img class="mana" src="/img/r.png">
+                      <img class="manar" src="/img/w.png">
+                      Jeskai
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/bgu/">
+                      <img class="mana" src="/img/b.png">
+                      <img class="mana" src="/img/g.png">
+                      <img class="manar" src="/img/u.png">
+                      Sultai
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/rwb/">
+                      <img class="mana" src="/img/r.png">
+                      <img class="mana" src="/img/w.png">
+                      <img class="manar" src="/img/b.png">
+                      Mardu
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/gur/">
+                      <img class="mana" src="/img/g.png">
+                      <img class="mana" src="/img/u.png">
+                      <img class="manar" src="/img/r.png">
+                      Temur
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- 4/5 Color -->
+              <li class="dropdown dropdown-submenu">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">4/5 Color</a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="/commanders/wubr/">
+                      <img class="mana" src="/img/w.png"> 
+                      <img class="mana" src="/img/u.png"> 
+                      <img class="mana" src="/img/b.png"> 
+                      <img class="manar" src="/img/r.png">
+                      Yore-Tiller
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/ubrg/">
+                      <img class="mana" src="/img/u.png"> 
+                      <img class="mana" src="/img/b.png"> 
+                      <img class="mana" src="/img/r.png"> 
+                      <img class="manar" src="/img/g.png">
+                      Glint-Eye
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/brgw/">
+                      <img class="mana" src="/img/b.png"> 
+                      <img class="mana" src="/img/r.png"> 
+                      <img class="mana" src="/img/g.png"> 
+                      <img class="manar" src="/img/w.png">
+                      Dune-Brood
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/rgwu/">
+                      <img class="mana" src="/img/r.png"> 
+                      <img class="mana" src="/img/g.png"> 
+                      <img class="mana" src="/img/w.png"> 
+                      <img class="manar" src="/img/u.png">
+                      Ink-Treader
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/commanders/gwub/">
+                      <img class="mana" src="/img/g.png"> 
+                      <img class="mana" src="/img/w.png"> 
+                      <img class="mana" src="/img/u.png"> 
+                      <img class="manar" src="/img/b.png">
+                      Witch-Maw
+                    </a>
+                  </li>
+                  <li style="padding-top: 11px">
+                    <a href="/commanders/wubrg/">
+                      <img class="mana" src="/img/w.png"> 
+                      <img class="mana" src="/img/u.png"> 
+                      <img class="mana" src="/img/b.png"> 
+                      <img class="mana" src="/img/r.png"> 
+                      <img class="manar" src="/img/g.png">
+                      5 Color
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!-- Sets -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sets <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="/sets/rna/">
+                  <img class="setsymbol" src="https://img.scryfall.com/sets/rna.svg?1546232400">
+                  Ravnica Allegiance
+                </a>
+              </li>
+              <li>
+                <a href="/sets/uma/">
+                  <img class="setsymbol" src="https://img.scryfall.com/sets/uma.svg?1546232400">
+                  Ultimate Masters
+                </a>
+              </li>
+              <li>
+                <a href="/sets/gnt/">
+                  <img class="setsymbol" src="https://img.scryfall.com/sets/gnt.svg?1546232400">
+                  Game Night
+                </a>
+              </li>
+              <li>
+                <a href="/sets/grn/">
+                  <img class="setsymbol" src="https://img.scryfall.com/sets/grn.svg?1546232400">
+                  Guilds of Ravnica
+                </a>
+              </li>
+              <li>
+                <a href="/sets/c18/">
+                  <img class="setsymbol" src="https://img.scryfall.com/sets/c18.svg?1546232400">
+                  Commander 2018
+                </a>
+              </li>
+              <li>
+                <a href="/sets/">
+                  <img class="setsymbol" src="/img/ori.png" style="opacity: 0">
+                  <b>More Sets...</b>
+                </a>
+              </li>
+              <li style="padding-top: 11px">
+                <a href="/precon/">
+                  <b>Precon Upgrades...</b>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Themes -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes <b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="/tribes/zombies/">Zombies</a>
+              </li>
+              <li>
+                <a href="/tribes/dragons/">Dragons</a>
+              </li>
+              <li>
+                <a href="/tribes/vampires/">Vampires</a>
+              </li>
+              <li>
+                <a href="/tribes/elves/">Elves</a>
+              </li>
+              <li>
+                <a href="/tribes/"><b>More Tribes...</b></a>
+              </li>
+              <li style="padding-top: 11px">
+                <a href="/themes/artifacts/">Artifacts</a>
+              </li>
+              <li>
+                <a href="/themes/p1-p1-counters/">+1/+1 Counters</a>
+              </li>
+              <li>
+                <a href="/themes/wheels/">Wheels</a>
+              </li>
+              <li>
+                <a href="/themes/lifegain/">Lifegain</a>
+              </li>
+              <li>
+                <a href="/themes/"><b>More Themes...</b></a>
+              </li>
+            </ul>
+          </li>
+          <!-- Random -->
+          <li class="visible-xs">
+            <a href="/random/">Random</a>
+          </li>
+          <!-- Recs -->
+          <li>
+            <a href="/recs/">Recs</a>
+          </li>
+        </ul>
+        <!-- Search Bar 2 of 2 (Desktop) -->
+        <form action="/route/" class="navbar-form pull-right hidden-xs" method="get" role="search">
+          <div class="input-group">
+            <input autocomplete="off" class="form-control typeahead" data-provide="typeahead" name="cc" placeholder="Search cards" type="search">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+          <a class="btn btn-default random-button" href="/random/" role="button"><i class="glyphicon glyphicon-random"></i></a>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div id="leaderboard" style="max-height: 90px"></div>
+  <div class="container edhrec__support-container">
+    <div class="panel panel-default edhrec__support-body" style="display: none">
+      <div class="panel-body">
+        <div>EDHREC relies on ads to pay server costs and fund new features.</div>
+        <div>Please consider supporting us by adding EDHREC to your adblock's whitelist.</div>
+      </div>
+    </div>
+  </div>
+    <div class="content-header"><h2>Rakdos</h2></div>
+  <div id="edhrec__panels">
+    
+  </div>
+  
+</div>
+<div class="cards">
+  <div class="test_cardlistscontainer">
+  <div id="buttonrow">
+    <a href="#rakdoscommanders"><button type="button" class="btn btn-xs btn-default">Rakdos Commanders</button></a>
+<a href="#rakdosstaples"><button type="button" class="btn btn-xs btn-default">Rakdos Staples</button></a>
+
+  </div>
+  
+  <div id="cardlists"></div>
+  </div>
+  <div class="container">
+
+  <!-- Footer -->
+  <div class="container">
+    <hr>
+    <footer>
+      <div class="social-footer">
+        <!-- Twitter -->
+        <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/edhrec">Follow @edhrec</a> 
+        <br>
+        <br>
+        <!-- Facebook -->
+         <iframe frameborder="0" height="80" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fedhrec1&width=200&layout=standard&action=like&show_faces=true&share=true&height=80&appId" style="border:none;overflow:hidden" width="200"></iframe>
+      </div>
+      <div class="email-footer">
+        <p>Email feedback to <a href="mailto:edhrec@minerkasch.com">edhrec@minerkasch.com</a></p>
+      </div>
+    </footer>
+  </div>
+  <div id="mobile-banner"></div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.5/chosen.jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.7.1/lazyload.min.js"></script>
+  <script src="https://platform.twitter.com/widgets.js"></script>
+  <script src="https://static.nitropay.com/nads/nads-35.min.js"></script> 
+  <script>const json_dict = {"cardlists":[{"cardviews":[{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/rtr/187.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":4.49,"variation":"","name":"Rakdos, Lord of Riots","url":"https://www.cardkingdom.com/mtg/return-to-ravnica/rakdos-lord-of-riots?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Rakdos, Lord of Riots","url":"/commanders/rakdos-lord-of-riots","label":"1466 decks","cardhoarder":{"price":"0.13","name":"Rakdos, Lord of Riots","url":"https://www.cardhoarder.com/cards/46563?affiliate_id=edhrec"},"tcgplayer":{"price":2.25,"id":66665,"name":"Rakdos, Lord of Riots","url":"https://store.tcgplayer.com/magic/return-to-ravnica/rakdos-lord-of-riots?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/mm3/177.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":4.49,"variation":"","name":"Olivia Voldaren","url":"https://www.cardkingdom.com/mtg/modern-masters-2017/olivia-voldaren?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Olivia Voldaren","url":"/commanders/olivia-voldaren","label":"967 decks","cardhoarder":{"price":"0.11","name":"Olivia Voldaren","url":"https://www.cardhoarder.com/cards/63301?affiliate_id=edhrec"},"tcgplayer":{"price":4.21,"id":128910,"name":"Olivia Voldaren","url":"https://store.tcgplayer.com/magic/innistrad/olivia-voldaren?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/bng/151.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":11.99,"variation":"","name":"Mogis, God of Slaughter","url":"https://www.cardkingdom.com/mtg/born-of-the-gods/mogis-god-of-slaughter?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Mogis, God of Slaughter","url":"/commanders/mogis-god-of-slaughter","label":"853 decks","cardhoarder":{"price":"0.23","name":"Mogis, God of Slaughter","url":"https://www.cardhoarder.com/cards/51743?affiliate_id=edhrec"},"tcgplayer":{"price":5.07,"id":78745,"name":"Mogis, God of Slaughter","url":"https://store.tcgplayer.com/magic/born-of-the-gods/mogis-god-of-slaughter?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/a25/205.jpg?1521725424","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Grenzo, Dungeon Warden","url":"https://www.cardkingdom.com/mtg/conspiracy/grenzo-dungeon-warden?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Grenzo, Dungeon Warden","url":"/commanders/grenzo-dungeon-warden","label":"764 decks","cardhoarder":{"price":"0.03","name":"Grenzo, Dungeon Warden","url":"https://www.cardhoarder.com/cards/67324?affiliate_id=edhrec"},"tcgplayer":{"price":0.25,"id":161492,"name":"Grenzo, Dungeon Warden","url":"https://store.tcgplayer.com/magic/conspiracy/grenzo-dungeon-warden?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/hou/146.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.99,"variation":"","name":"The Scorpion God","url":"https://www.cardkingdom.com/mtg/hour-of-devastation/the-scorpion-god?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"The Scorpion God","url":"/commanders/the-scorpion-god","label":"482 decks","cardhoarder":{"price":"0.51","name":"The Scorpion God","url":"https://www.cardhoarder.com/cards/64970?affiliate_id=edhrec"},"tcgplayer":{"price":1.25,"id":134892,"name":"The Scorpion God","url":"https://store.tcgplayer.com/magic/hour-of-devastation/the-scorpion-god?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/soi/248.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.79,"variation":"","name":"Olivia, Mobilized for War","url":"https://www.cardkingdom.com/mtg/shadows-over-innistrad/olivia-mobilized-for-war?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Olivia, Mobilized for War","url":"/commanders/olivia-mobilized-for-war","label":"433 decks","cardhoarder":{"price":"0.02","name":"Olivia, Mobilized for War","url":"https://www.cardhoarder.com/cards/59946?affiliate_id=edhrec"},"tcgplayer":{"price":1.44,"id":115595,"name":"Olivia, Mobilized for War","url":"https://store.tcgplayer.com/magic/shadows-over-innistrad/olivia-mobilized-for-war?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/front/7/5/7593d5fb-c6b3-4d24-b9d3-97a4378161fd.jpg?1543676084","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Neheb, the Worthy","url":"https://www.cardkingdom.com/mtg/amonkhet/neheb-the-worthy?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Neheb, the Worthy","url":"/commanders/neheb-the-worthy","label":"400 decks","cardhoarder":{"price":"0.02","name":"Neheb, the Worthy","url":"https://www.cardhoarder.com/cards/64008?affiliate_id=edhrec"},"tcgplayer":{"price":0.21,"id":130050,"name":"Neheb, the Worthy","url":"https://store.tcgplayer.com/magic/amonkhet/neheb-the-worthy?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/tsp/242.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":6.49,"variation":"","name":"Kaervek the Merciless","url":"https://www.cardkingdom.com/mtg/time-spiral/kaervek-the-merciless?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Kaervek the Merciless","url":"/commanders/kaervek-the-merciless","label":"333 decks","cardhoarder":{"price":"0.01","name":"Kaervek the Merciless","url":"https://www.cardhoarder.com/cards/25647?affiliate_id=edhrec"},"tcgplayer":{"price":4.69,"id":14273,"name":"Kaervek the Merciless","url":"https://store.tcgplayer.com/magic/time-spiral/kaervek-the-merciless?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/lrw/252.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.99,"variation":"","name":"Wort, Boggart Auntie","url":"https://www.cardkingdom.com/mtg/lorwyn/wort-boggart-auntie?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Wort, Boggart Auntie","url":"/commanders/wort-boggart-auntie","label":"302 decks","cardhoarder":{"price":"0.01","name":"Wort, Boggart Auntie","url":"https://www.cardhoarder.com/cards/28399?affiliate_id=edhrec"},"tcgplayer":{"price":2.35,"id":15687,"name":"Wort, Boggart Auntie","url":"https://store.tcgplayer.com/magic/lorwyn/wort-boggart-auntie?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/ima/205.jpg?1530592573","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Malfegor","url":"https://www.cardkingdom.com/mtg/iconic-masters/malfegor?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Malfegor","url":"/commanders/malfegor","label":"231 decks","cardhoarder":{"price":"0.01","name":"Malfegor","url":"https://www.cardhoarder.com/cards/66289?affiliate_id=edhrec"},"tcgplayer":{"price":0.2,"id":145307,"name":"Malfegor","url":"https://store.tcgplayer.com/magic/conflux/malfegor?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/ths/207.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Tymaret, the Murder King","url":"https://www.cardkingdom.com/mtg/theros/tymaret-the-murder-king?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Tymaret, the Murder King","url":"/commanders/tymaret-the-murder-king","label":"185 decks","cardhoarder":{"price":"0.01","name":"Tymaret, the Murder King","url":"https://www.cardhoarder.com/cards/50528?affiliate_id=edhrec"},"tcgplayer":{"price":0.14,"id":71087,"name":"Tymaret, the Murder King","url":"https://store.tcgplayer.com/magic/theros/tymaret-the-murder-king?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/dis/117.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.79,"variation":"","name":"Lyzolda, the Blood Witch","url":"https://www.cardkingdom.com/mtg/dissension/lyzolda-the-blood-witch?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Lyzolda, the Blood Witch","url":"/commanders/lyzolda-the-blood-witch","label":"185 decks","cardhoarder":{"price":"0.01","name":"Lyzolda, the Blood Witch","url":"https://www.cardhoarder.com/cards/24179?affiliate_id=edhrec"},"tcgplayer":{"price":0.36,"id":13889,"name":"Lyzolda, the Blood Witch","url":"https://store.tcgplayer.com/magic/dissension/lyzolda-the-blood-witch?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/c18/50.jpg?1535502552","is_banned":false}],"cardkingdom":{"price":3.49,"variation":"","name":"Xantcha, Sleeper Agent","url":"https://www.cardkingdom.com/mtg/commander-2018/xantcha-sleeper-agent?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Xantcha, Sleeper Agent","url":"/commanders/xantcha-sleeper-agent","label":"179 decks","cardhoarder":null,"tcgplayer":{"price":3.41,"id":170804,"name":"Xantcha, Sleeper Agent","url":"https://store.tcgplayer.com/magic/commander-2018/xantcha-sleeper-agent?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/c17/176.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Kolaghan, the Storm's Fury","url":"https://www.cardkingdom.com/mtg/fate-reforged/kolaghan-the-storms-fury?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Kolaghan, the Storm's Fury","url":"/commanders/kolaghan-the-storms-fury","label":"158 decks","cardhoarder":{"price":"0.02","name":"Kolaghan, the Storm's Fury","url":"https://www.cardhoarder.com/cards/55354?affiliate_id=edhrec"},"tcgplayer":{"price":0.23,"id":139973,"name":"Kolaghan, the Storm's Fury","url":"https://store.tcgplayer.com/magic/fate-reforged/kolaghan-the-storms-fury?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/dis/129.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":4.99,"variation":"","name":"Rakdos the Defiler","url":"https://www.cardkingdom.com/mtg/dissension/rakdos-the-defiler?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Rakdos the Defiler","url":"/commanders/rakdos-the-defiler","label":"149 decks","cardhoarder":{"price":"0.01","name":"Rakdos the Defiler","url":"https://www.cardhoarder.com/cards/24225?affiliate_id=edhrec"},"tcgplayer":{"price":3.28,"id":13932,"name":"Rakdos the Defiler","url":"https://store.tcgplayer.com/magic/dissension/rakdos-the-defiler?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/c16/49.jpg?1532086603","is_banned":false}],"cardkingdom":{"price":15.99,"variation":"Foil","name":"Vial Smasher the Fierce","url":"https://www.cardkingdom.com/mtg/commander-2016/vial-smasher-the-fierce-foil?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Vial Smasher the Fierce","url":"/commanders/vial-smasher-the-fierce","label":"149 decks","cardhoarder":{"price":"0.81","name":"Vial Smasher the Fierce","url":"https://www.cardhoarder.com/cards/62329?affiliate_id=edhrec"},"tcgplayer":{"price":7.89,"id":124012,"name":"Vial Smasher the Fierce","url":"https://store.tcgplayer.com/magic/commander-2016/vial-smasher-the-fierce?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/ima/193.jpg?1530592517","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Bladewing the Risen","url":"https://www.cardkingdom.com/mtg/iconic-masters/bladewing-the-risen?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Bladewing the Risen","url":"/commanders/bladewing-the-risen","label":"137 decks","cardhoarder":{"price":"0.06","name":"Bladewing the Risen","url":"https://www.cardhoarder.com/cards/66265?affiliate_id=edhrec"},"tcgplayer":{"price":0.15,"id":145335,"name":"Bladewing the Risen","url":"https://store.tcgplayer.com/magic/scourge/bladewing-the-risen?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/dgm/69.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Exava, Rakdos Blood Witch","url":"https://www.cardkingdom.com/mtg/dragons-maze/exava-rakdos-blood-witch?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Exava, Rakdos Blood Witch","url":"/commanders/exava-rakdos-blood-witch","label":"118 decks","cardhoarder":{"price":"0.01","name":"Exava, Rakdos Blood Witch","url":"https://www.cardhoarder.com/cards/48248?affiliate_id=edhrec"},"tcgplayer":{"price":0.21,"id":67894,"name":"Exava, Rakdos Blood Witch","url":"https://store.tcgplayer.com/magic/dragons-maze/exava-rakdos-blood-witch?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/inv/281.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.29,"variation":"","name":"Tsabo Tavoc","url":"https://www.cardkingdom.com/mtg/invasion/tsabo-tavoc?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Tsabo Tavoc","url":"/commanders/tsabo-tavoc","label":"77 decks","cardhoarder":{"price":"0.12","name":"Tsabo Tavoc","url":"https://www.cardhoarder.com/cards/15009?affiliate_id=edhrec"},"tcgplayer":{"price":1.77,"id":7717,"name":"Tsabo Tavoc","url":"https://store.tcgplayer.com/magic/invasion/tsabo-tavoc?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/front/c/c/cc84b7cf-5c68-4bb1-a1dc-2a5fae3baf04.jpg?1542805458","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Garna, the Bloodflame","url":"https://www.cardkingdom.com/mtg/dominaria/garna-the-bloodflame?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Garna, the Bloodflame","url":"/commanders/garna-the-bloodflame","label":"56 decks","cardhoarder":{"price":"0.01","name":"Garna, the Bloodflame","url":"https://www.cardhoarder.com/cards/67853?affiliate_id=edhrec"},"tcgplayer":{"price":0.13,"id":162133,"name":"Garna, the Bloodflame","url":"https://store.tcgplayer.com/magic/dominaria/garna-the-bloodflame?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/dtk/218.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":5.99,"variation":"","name":"Dragonlord Kolaghan","url":"https://www.cardkingdom.com/mtg/dragons-of-tarkir/dragonlord-kolaghan?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Dragonlord Kolaghan","url":"/commanders/dragonlord-kolaghan","label":"53 decks","cardhoarder":{"price":"0.20","name":"Dragonlord Kolaghan","url":"https://www.cardhoarder.com/cards/56128?affiliate_id=edhrec"},"tcgplayer":{"price":4.28,"id":96486,"name":"Dragonlord Kolaghan","url":"https://store.tcgplayer.com/magic/dragons-of-tarkir/dragonlord-kolaghan?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/leg/223.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":22.99,"variation":"","name":"Boris Devilboon","url":"https://www.cardkingdom.com/mtg/legends/boris-devilboon?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Boris Devilboon","url":"/commanders/boris-devilboon","label":"33 decks","cardhoarder":{"price":"0.04","name":"Boris Devilboon","url":"https://www.cardhoarder.com/cards/33748?affiliate_id=edhrec"},"tcgplayer":{"price":20.74,"id":3817,"name":"Boris Devilboon","url":"https://store.tcgplayer.com/magic/legends/boris-devilboon?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/dom/96.jpg?1524790927","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Kazarov, Sengir Pureblood","url":"https://www.cardkingdom.com/mtg/dominaria/kazarov-sengir-pureblood?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Kazarov, Sengir Pureblood","url":"/commanders/kazarov-sengir-pureblood","label":"24 decks","cardhoarder":{"price":"0.01","name":"Kazarov, Sengir Pureblood","url":"https://www.cardhoarder.com/cards/67657?affiliate_id=edhrec"},"tcgplayer":{"price":0.13,"id":162161,"name":"Kazarov, Sengir Pureblood","url":"https://store.tcgplayer.com/magic/dominaria/kazarov-sengir-pureblood?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/leg/241.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Lady Orca","url":"https://www.cardkingdom.com/mtg/anthologies/lady-orca?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Lady Orca","url":"/commanders/lady-orca","label":"19 decks","cardhoarder":{"price":"0.01","name":"Lady Orca","url":"https://www.cardhoarder.com/cards/33552?affiliate_id=edhrec"},"tcgplayer":{"price":0.29,"id":79534,"name":"Lady Orca","url":"https://store.tcgplayer.com/magic/legends/lady-orca?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/chr/88.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Tor Wauki","url":"https://www.cardkingdom.com/mtg/chronicles/tor-wauki?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Tor Wauki","url":"/commanders/tor-wauki","label":"18 decks","cardhoarder":{"price":"0.04","name":"Tor Wauki","url":"https://www.cardhoarder.com/cards/33612?affiliate_id=edhrec"},"tcgplayer":{"price":0.1,"id":3450,"name":"Tor Wauki","url":"https://store.tcgplayer.com/magic/chronicles/tor-wauki?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/leg/221.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.49,"variation":"","name":"Barktooth Warbeard","url":"https://www.cardkingdom.com/mtg/legends/barktooth-warbeard?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Barktooth Warbeard","url":"/commanders/barktooth-warbeard","label":"17 decks","cardhoarder":{"price":"0.02","name":"Barktooth Warbeard","url":"https://www.cardhoarder.com/cards/33492?affiliate_id=edhrec"},"tcgplayer":{"price":2.27,"id":3808,"name":"Barktooth Warbeard","url":"https://store.tcgplayer.com/magic/legends/barktooth-warbeard?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/chr/72.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Axelrod Gunnarson","url":"https://www.cardkingdom.com/mtg/chronicles/axelrod-gunnarson?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Axelrod Gunnarson","url":"/commanders/axelrod-gunnarson","label":"12 decks","cardhoarder":{"price":"0.01","name":"Axelrod Gunnarson","url":"https://www.cardhoarder.com/cards/33490?affiliate_id=edhrec"},"tcgplayer":{"price":0.2,"id":3362,"name":"Axelrod Gunnarson","url":"https://store.tcgplayer.com/magic/chronicles/axelrod-gunnarson?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/leg/248.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.49,"variation":"","name":"Pavel Maliki","url":"https://www.cardkingdom.com/mtg/legends/pavel-maliki?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Pavel Maliki","url":"/commanders/pavel-maliki","label":"11 decks","cardhoarder":{"price":"0.06","name":"Pavel Maliki","url":"https://www.cardhoarder.com/cards/33572?affiliate_id=edhrec"},"tcgplayer":{"price":1.7,"id":3970,"name":"Pavel Maliki","url":"https://store.tcgplayer.com/magic/legends/pavel-maliki?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/en/leg/255.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":32.99,"variation":"","name":"Rohgahh of Kher Keep","url":"https://www.cardkingdom.com/mtg/legends/rohgahh-of-kher-keep?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Rohgahh of Kher Keep","url":"/commanders/rohgahh-of-kher-keep","label":"7 decks","cardhoarder":{"price":"0.01","name":"Rohgahh of Kher Keep","url":"https://www.cardhoarder.com/cards/33728?affiliate_id=edhrec"},"tcgplayer":{"price":35.7,"id":4008,"name":"Rohgahh of Kher Keep","url":"https://store.tcgplayer.com/magic/legends/rohgahh-of-kher-keep?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":true,"image":"https://img.scryfall.com/cards/normal/front/0/a/0a742125-730d-4082-bfd8-5feb7733def4.jpg?1546444823","is_banned":false}],"cardkingdom":{"price":2.99,"variation":"","name":"Judith, the Scourge Diva","url":"https://www.cardkingdom.com/mtg/ravnica-allegiance/judith-the-scourge-diva?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Judith, the Scourge Diva","url":"/commanders/judith-the-scourge-diva","label":"3 decks","cardhoarder":null,"tcgplayer":null}],"tag":"rakdoscommanders","header":"Rakdos Commanders"},{"cardviews":[{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/222.jpg?1535505021","is_banned":false}],"cardkingdom":{"price":3.49,"variation":"","name":"Sol Ring","url":"https://www.cardkingdom.com/mtg/commander-2014/sol-ring?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Sol Ring","url":"/cards/sol-ring","label":"76% of 7446 decks","cardhoarder":{"price":"3.80","name":"Sol Ring","url":"https://www.cardhoarder.com/cards/62143?affiliate_id=edhrec"},"tcgplayer":{"price":2.59,"id":171158,"name":"Sol Ring","url":"https://store.tcgplayer.com/magic/alpha-edition/sol-ring?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/221.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.29,"variation":"","name":"Rakdos Signet","url":"https://www.cardkingdom.com/mtg/dissension/rakdos-signet?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Rakdos Signet","url":"/cards/rakdos-signet","label":"69% of 7440 decks","cardhoarder":{"price":"0.03","name":"Rakdos Signet","url":"https://www.cardhoarder.com/cards/63235?affiliate_id=edhrec"},"tcgplayer":{"price":0.48,"id":13931,"name":"Rakdos Signet","url":"https://store.tcgplayer.com/magic/dissension/rakdos-signet?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/199.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.79,"variation":"","name":"Terminate","url":"https://www.cardkingdom.com/mtg/planeshift/terminate?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Terminate","url":"/cards/terminate","label":"56% of 7445 decks","cardhoarder":{"price":"0.06","name":"Terminate","url":"https://www.cardhoarder.com/cards/63519?affiliate_id=edhrec"},"tcgplayer":{"price":0.89,"id":128597,"name":"Terminate","url":"https://store.tcgplayer.com/magic/planeshift/terminate?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/190.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.49,"variation":"","name":"Rakdos Charm","url":"https://www.cardkingdom.com/mtg/return-to-ravnica/rakdos-charm?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Rakdos Charm","url":"/cards/rakdos-charm","label":"47% of 7402 decks","cardhoarder":{"price":"0.04","name":"Rakdos Charm","url":"https://www.cardhoarder.com/cards/46441?affiliate_id=edhrec"},"tcgplayer":{"price":0.24,"id":66516,"name":"Rakdos Charm","url":"https://store.tcgplayer.com/magic/return-to-ravnica/rakdos-charm?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/rtr/157.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":2.99,"variation":"","name":"Dreadbore","url":"https://www.cardkingdom.com/mtg/return-to-ravnica/dreadbore?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Dreadbore","url":"/cards/dreadbore","label":"43% of 7402 decks","cardhoarder":{"price":"0.09","name":"Dreadbore","url":"https://www.cardhoarder.com/cards/46443?affiliate_id=edhrec"},"tcgplayer":{"price":2.55,"id":66396,"name":"Dreadbore","url":"https://store.tcgplayer.com/magic/return-to-ravnica/dreadbore?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/cn2/144.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":9.99,"variation":"","name":"Phyrexian Arena","url":"https://www.cardkingdom.com/mtg/conspiracy-take-the-crown/phyrexian-arena?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Phyrexian Arena","url":"/cards/phyrexian-arena","label":"42% of 7445 decks","cardhoarder":{"price":"14.20","name":"Phyrexian Arena","url":"https://www.cardhoarder.com/cards/44642?affiliate_id=edhrec"},"tcgplayer":{"price":8.1,"id":37410,"name":"Phyrexian Arena","url":"https://store.tcgplayer.com/magic/apocalypse/phyrexian-arena?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c15/170.jpg?1519045191","is_banned":false}],"cardkingdom":{"price":4.99,"variation":"","name":"Vandalblast","url":"https://www.cardkingdom.com/mtg/return-to-ravnica/vandalblast?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Vandalblast","url":"/cards/vandalblast","label":"39% of 7402 decks","cardhoarder":{"price":"0.04","name":"Vandalblast","url":"https://www.cardhoarder.com/cards/46405?affiliate_id=edhrec"},"tcgplayer":{"price":2.73,"id":66647,"name":"Vandalblast","url":"https://store.tcgplayer.com/magic/return-to-ravnica/vandalblast?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/19.jpg?1535502120","is_banned":false}],"cardkingdom":{"price":2.29,"variation":"","name":"Sower of Discord","url":"https://www.cardkingdom.com/mtg/commander-2018/sower-of-discord?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Sower of Discord","url":"/cards/sower-of-discord","label":"39% of 234 decks","cardhoarder":null,"tcgplayer":{"price":1.29,"id":171078,"name":"Sower of Discord","url":"https://store.tcgplayer.com/magic/commander-2018/sower-of-discord?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/215.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":6.99,"variation":"","name":"Lightning Greaves","url":"https://www.cardkingdom.com/mtg/commander-2015/lightning-greaves?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Lightning Greaves","url":"/cards/lightning-greaves","label":"36% of 7442 decks","cardhoarder":{"price":"1.46","name":"Lightning Greaves","url":"https://www.cardhoarder.com/cards/62137?affiliate_id=edhrec"},"tcgplayer":{"price":4.27,"id":139961,"name":"Lightning Greaves","url":"https://store.tcgplayer.com/magic/mirrodin/lightning-greaves?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/front/0/6/06750380-a9a9-4ab4-a03b-d4d35a31132a.jpg?1543698803","is_banned":false}],"cardkingdom":{"price":0.29,"variation":"","name":"Diabolic Tutor","url":"https://www.cardkingdom.com/mtg/conspiracy-take-the-crown/diabolic-tutor?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Diabolic Tutor","url":"/cards/diabolic-tutor","label":"36% of 7445 decks","cardhoarder":{"price":"0.02","name":"Diabolic Tutor","url":"https://www.cardhoarder.com/cards/61955?affiliate_id=edhrec"},"tcgplayer":{"price":0.25,"id":69975,"name":"Diabolic Tutor","url":"https://store.tcgplayer.com/magic/odyssey/diabolic-tutor?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/120.jpg?1535503611","is_banned":false}],"cardkingdom":{"price":3.49,"variation":"","name":"Blasphemous Act","url":"https://www.cardkingdom.com/mtg/commander-anthology-vol-ii/blasphemous-act?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Blasphemous Act","url":"/cards/blasphemous-act","label":"35% of 7424 decks","cardhoarder":{"price":"2.45","name":"Blasphemous Act","url":"https://www.cardhoarder.com/cards/54961?affiliate_id=edhrec"},"tcgplayer":{"price":2.32,"id":55902,"name":"Blasphemous Act","url":"https://store.tcgplayer.com/magic/innistrad/blasphemous-act?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/mrd/255.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.29,"variation":"","name":"Talisman of Indulgence","url":"https://www.cardkingdom.com/mtg/archenemy-nicol-bolas/talisman-of-indulgence?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Talisman of Indulgence","url":"/cards/talisman-of-indulgence","label":"33% of 7442 decks","cardhoarder":{"price":"0.03","name":"Talisman of Indulgence","url":"https://www.cardhoarder.com/cards/19681?affiliate_id=edhrec"},"tcgplayer":{"price":0.88,"id":11563,"name":"Talisman of Indulgence","url":"https://store.tcgplayer.com/magic/mirrodin/talisman-of-indulgence?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/122.jpg?1535503638","is_banned":false}],"cardkingdom":{"price":1.99,"variation":"","name":"Chaos Warp","url":"https://www.cardkingdom.com/mtg/commander-2017/chaos-warp?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Chaos Warp","url":"/cards/chaos-warp","label":"32% of 7427 decks","cardhoarder":{"price":"1.11","name":"Chaos Warp","url":"https://www.cardhoarder.com/cards/59045?affiliate_id=edhrec"},"tcgplayer":{"price":1.39,"id":170778,"name":"Chaos Warp","url":"https://store.tcgplayer.com/magic/commander/chaos-warp?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/225.jpg?1535505062","is_banned":false}],"cardkingdom":{"price":1.49,"variation":"","name":"Swiftfoot Boots","url":"https://www.cardkingdom.com/mtg/masters-25/swiftfoot-boots?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Swiftfoot Boots","url":"/cards/swiftfoot-boots","label":"32% of 7424 decks","cardhoarder":{"price":"0.05","name":"Swiftfoot Boots","url":"https://www.cardhoarder.com/cards/67382?affiliate_id=edhrec"},"tcgplayer":{"price":1.22,"id":108106,"name":"Swiftfoot Boots","url":"https://store.tcgplayer.com/magic/magic-2012-m12/swiftfoot-boots?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c16/273.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":4.49,"variation":"","name":"Solemn Simulacrum","url":"https://www.cardkingdom.com/mtg/duel-decks-elves-vs-inventors/solemn-simulacrum?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Solemn Simulacrum","url":"/cards/solemn-simulacrum","label":"29% of 7442 decks","cardhoarder":{"price":"1.45","name":"Solemn Simulacrum","url":"https://www.cardhoarder.com/cards/62169?affiliate_id=edhrec"},"tcgplayer":{"price":3.15,"id":162875,"name":"Solemn Simulacrum","url":"https://store.tcgplayer.com/magic/mirrodin/solemn-simulacrum?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/front/3/b/3bdbc231-5316-4abd-9d8d-d87cff2c9847.jpg?1545068655","is_banned":false}],"cardkingdom":{"price":29.99,"variation":"Divine vs Demonic","name":"Demonic Tutor","url":"https://www.cardkingdom.com/mtg/duel-decks-anthology/demonic-tutor-divine-vs-demonic?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Demonic Tutor","url":"/cards/demonic-tutor","label":"29% of 7446 decks","cardhoarder":{"price":"4.06","name":"Demonic Tutor","url":"https://www.cardhoarder.com/cards/52849?affiliate_id=edhrec"},"tcgplayer":{"price":27.99,"id":110141,"name":"Demonic Tutor","url":"https://store.tcgplayer.com/magic/alpha-edition/demonic-tutor?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/bbd/76.jpg?1529061586","is_banned":false}],"cardkingdom":{"price":0.99,"variation":"","name":"Last One Standing","url":"https://www.cardkingdom.com/mtg/battlebond/last-one-standing?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Last One Standing","url":"/cards/last-one-standing","label":"27% of 528 decks","cardhoarder":{"price":"0.01","name":"Last One Standing","url":"https://www.cardhoarder.com/cards/68880?affiliate_id=edhrec"},"tcgplayer":{"price":0.42,"id":167656,"name":"Last One Standing","url":"https://store.tcgplayer.com/magic/battlebond/last-one-standing?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/122.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Read the Bones","url":"https://www.cardkingdom.com/mtg/theros/read-the-bones?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Read the Bones","url":"/cards/read-the-bones","label":"27% of 7337 decks","cardhoarder":{"price":"0.03","name":"Read the Bones","url":"https://www.cardhoarder.com/cards/57752?affiliate_id=edhrec"},"tcgplayer":{"price":0.13,"id":104242,"name":"Read the Bones","url":"https://store.tcgplayer.com/magic/theros/read-the-bones?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/200.jpg?1535504702","is_banned":false}],"cardkingdom":{"price":0.99,"variation":"","name":"Commander's Sphere","url":"https://www.cardkingdom.com/mtg/commander-2014/commanders-sphere?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Commander's Sphere","url":"/cards/commanders-sphere","label":"26% of 6960 decks","cardhoarder":{"price":"0.79","name":"Commander's Sphere","url":"https://www.cardhoarder.com/cards/55141?affiliate_id=edhrec"},"tcgplayer":{"price":0.97,"id":123976,"name":"Commander's Sphere","url":"https://store.tcgplayer.com/magic/commander-2014/commanders-sphere?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/ths/90.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":3.99,"variation":"","name":"Hero's Downfall","url":"https://www.cardkingdom.com/mtg/theros/heros-downfall?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Hero's Downfall","url":"/cards/heros-downfall","label":"26% of 7337 decks","cardhoarder":{"price":"0.02","name":"Hero's Downfall","url":"https://www.cardhoarder.com/cards/55731?affiliate_id=edhrec"},"tcgplayer":{"price":2.49,"id":71183,"name":"Hero's Downfall","url":"https://store.tcgplayer.com/magic/theros/heros-downfall?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/hou/104.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":6.99,"variation":"","name":"Neheb, the Eternal","url":"https://www.cardkingdom.com/mtg/hour-of-devastation/neheb-the-eternal?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Neheb, the Eternal","url":"/cards/neheb-the-eternal","label":"26% of 2264 decks","cardhoarder":{"price":"0.10","name":"Neheb, the Eternal","url":"https://www.cardhoarder.com/cards/64692?affiliate_id=edhrec"},"tcgplayer":{"price":4.34,"id":135014,"name":"Neheb, the Eternal","url":"https://store.tcgplayer.com/magic/hour-of-devastation/neheb-the-eternal?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/ths/110.jpg?1528916029","is_banned":false}],"cardkingdom":{"price":2.99,"variation":"","name":"Whip of Erebos","url":"https://www.cardkingdom.com/mtg/theros/whip-of-erebos?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Whip of Erebos","url":"/cards/whip-of-erebos","label":"26% of 7337 decks","cardhoarder":{"price":"0.02","name":"Whip of Erebos","url":"https://www.cardhoarder.com/cards/55733?affiliate_id=edhrec"},"tcgplayer":{"price":2.25,"id":71354,"name":"Whip of Erebos","url":"https://store.tcgplayer.com/magic/theros/whip-of-erebos?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/bbd/44.jpg?1529061215","is_banned":false}],"cardkingdom":{"price":13.99,"variation":"","name":"Archfiend of Despair","url":"https://www.cardkingdom.com/mtg/battlebond/archfiend-of-despair?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Archfiend of Despair","url":"/cards/archfiend-of-despair","label":"25% of 528 decks","cardhoarder":{"price":"0.10","name":"Archfiend of Despair","url":"https://www.cardhoarder.com/cards/68816?affiliate_id=edhrec"},"tcgplayer":{"price":5.94,"id":167637,"name":"Archfiend of Despair","url":"https://store.tcgplayer.com/magic/battlebond/archfiend-of-despair?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/119.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.99,"variation":"","name":"Palace Siege","url":"https://www.cardkingdom.com/mtg/fate-reforged/palace-siege?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Palace Siege","url":"/cards/palace-siege","label":"25% of 6840 decks","cardhoarder":{"price":"0.02","name":"Palace Siege","url":"https://www.cardhoarder.com/cards/55444?affiliate_id=edhrec"},"tcgplayer":{"price":0.46,"id":95270,"name":"Palace Siege","url":"https://store.tcgplayer.com/magic/fate-reforged/palace-siege?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c14/139.jpg?1530677866","is_banned":false}],"cardkingdom":{"price":5.49,"variation":"","name":"Crypt Ghast","url":"https://www.cardkingdom.com/mtg/gatecrash/crypt-ghast?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Crypt Ghast","url":"/cards/crypt-ghast","label":"24% of 7378 decks","cardhoarder":{"price":"2.49","name":"Crypt Ghast","url":"https://www.cardhoarder.com/cards/55047?affiliate_id=edhrec"},"tcgplayer":{"price":3.02,"id":67378,"name":"Crypt Ghast","url":"https://store.tcgplayer.com/magic/gatecrash/crypt-ghast?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c15/248.jpg?1519045701","is_banned":false}],"cardkingdom":{"price":1.99,"variation":"","name":"Burnished Hart","url":"https://www.cardkingdom.com/mtg/theros/burnished-hart?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Burnished Hart","url":"/cards/burnished-hart","label":"24% of 7337 decks","cardhoarder":{"price":"1.01","name":"Burnished Hart","url":"https://www.cardhoarder.com/cards/55077?affiliate_id=edhrec"},"tcgplayer":{"price":1.55,"id":71405,"name":"Burnished Hart","url":"https://store.tcgplayer.com/magic/theros/burnished-hart?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/rix/152.jpg?1524752087","is_banned":false}],"cardkingdom":{"price":17.99,"variation":"","name":"Angrath, the Flame-Chained","url":"https://www.cardkingdom.com/mtg/rivals-of-ixalan/angrath-the-flame-chained?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Angrath, the Flame-Chained","url":"/cards/angrath-the-flame-chained","label":"23% of 874 decks","cardhoarder":{"price":"1.67","name":"Angrath, the Flame-Chained","url":"https://www.cardhoarder.com/cards/66757?affiliate_id=edhrec"},"tcgplayer":{"price":5.89,"id":155674,"name":"Angrath, the Flame-Chained","url":"https://store.tcgplayer.com/magic/rivals-of-ixalan/angrath-the-flame-chained?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/207.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.59,"variation":"","name":"Darksteel Ingot","url":"https://www.cardkingdom.com/mtg/commander-2017/darksteel-ingot?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Darksteel Ingot","url":"/cards/darksteel-ingot","label":"23% of 7441 decks","cardhoarder":{"price":"2.06","name":"Darksteel Ingot","url":"https://www.cardhoarder.com/cards/51448?affiliate_id=edhrec"},"tcgplayer":{"price":0.44,"id":69923,"name":"Darksteel Ingot","url":"https://store.tcgplayer.com/magic/darksteel/darksteel-ingot?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/front/8/6/8682fb87-df14-4277-aaa0-0d53d766c406.jpg?1538879173","is_banned":false}],"cardkingdom":{"price":0.35,"variation":"","name":"Plaguecrafter","url":"https://www.cardkingdom.com/mtg/guilds-of-ravnica/plaguecrafter?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Plaguecrafter","url":"/cards/plaguecrafter","label":"23% of 39 decks","cardhoarder":{"price":"0.04","name":"Plaguecrafter","url":"https://www.cardhoarder.com/cards/69537?affiliate_id=edhrec"},"tcgplayer":{"price":0.5,"id":176935,"name":"Plaguecrafter","url":"https://store.tcgplayer.com/magic/guilds-of-ravnica/plaguecrafter?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/hou/77.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":7.99,"variation":"","name":"Torment of Hailfire","url":"https://www.cardkingdom.com/mtg/hour-of-devastation/torment-of-hailfire?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Torment of Hailfire","url":"/cards/torment-of-hailfire","label":"23% of 2264 decks","cardhoarder":{"price":"0.03","name":"Torment of Hailfire","url":"https://www.cardhoarder.com/cards/64638?affiliate_id=edhrec"},"tcgplayer":{"price":4.97,"id":135074,"name":"Torment of Hailfire","url":"https://store.tcgplayer.com/magic/hour-of-devastation/torment-of-hailfire?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c14/137.jpg?1530677852","is_banned":false}],"cardkingdom":{"price":1.49,"variation":"","name":"Bloodgift Demon","url":"https://www.cardkingdom.com/mtg/innistrad/bloodgift-demon?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Bloodgift Demon","url":"/cards/bloodgift-demon","label":"23% of 7424 decks","cardhoarder":{"price":"0.53","name":"Bloodgift Demon","url":"https://www.cardhoarder.com/cards/54979?affiliate_id=edhrec"},"tcgplayer":{"price":0.94,"id":52150,"name":"Bloodgift Demon","url":"https://store.tcgplayer.com/magic/innistrad/bloodgift-demon?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/28.jpg?1535502243","is_banned":false}],"cardkingdom":{"price":1.29,"variation":"","name":"Varchild, Betrayer of Kjeldor","url":"https://www.cardkingdom.com/mtg/commander-2018/varchild-betrayer-of-kjeldor?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Varchild, Betrayer of Kjeldor","url":"/cards/varchild-betrayer-of-kjeldor","label":"23% of 234 decks","cardhoarder":null,"tcgplayer":{"price":1.06,"id":170784,"name":"Varchild, Betrayer of Kjeldor","url":"https://store.tcgplayer.com/magic/commander-2018/varchild-betrayer-of-kjeldor?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/dgm/104.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.69,"variation":"","name":"Sire of Insanity","url":"https://www.cardkingdom.com/mtg/dragons-maze/sire-of-insanity?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Sire of Insanity","url":"/cards/sire-of-insanity","label":"22% of 7366 decks","cardhoarder":{"price":"0.02","name":"Sire of Insanity","url":"https://www.cardhoarder.com/cards/48344?affiliate_id=edhrec"},"tcgplayer":{"price":0.32,"id":67898,"name":"Sire of Insanity","url":"https://store.tcgplayer.com/magic/dragons-maze/sire-of-insanity?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/front/1/6/16ad8f86-7860-4896-a161-07bf347bbd5b.jpg?1543699767","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Unlicensed Disintegration","url":"https://www.cardkingdom.com/mtg/kaladesh/unlicensed-disintegration?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Unlicensed Disintegration","url":"/cards/unlicensed-disintegration","label":"20% of 4696 decks","cardhoarder":{"price":"0.04","name":"Unlicensed Disintegration","url":"https://www.cardhoarder.com/cards/64430?affiliate_id=edhrec"},"tcgplayer":{"price":0.07,"id":122744,"name":"Unlicensed Disintegration","url":"https://store.tcgplayer.com/magic/kaladesh/unlicensed-disintegration?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/bng/151.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":11.99,"variation":"","name":"Mogis, God of Slaughter","url":"https://www.cardkingdom.com/mtg/born-of-the-gods/mogis-god-of-slaughter?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Mogis, God of Slaughter","url":"/cards/mogis-god-of-slaughter","label":"20% of 7273 decks","cardhoarder":{"price":"0.23","name":"Mogis, God of Slaughter","url":"https://www.cardhoarder.com/cards/51743?affiliate_id=edhrec"},"tcgplayer":{"price":5.07,"id":78745,"name":"Mogis, God of Slaughter","url":"https://store.tcgplayer.com/magic/born-of-the-gods/mogis-god-of-slaughter?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/rtr/166.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Havoc Festival","url":"https://www.cardkingdom.com/mtg/return-to-ravnica/havoc-festival?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Havoc Festival","url":"/cards/havoc-festival","label":"20% of 7402 decks","cardhoarder":{"price":"0.01","name":"Havoc Festival","url":"https://www.cardhoarder.com/cards/46775?affiliate_id=edhrec"},"tcgplayer":{"price":0.14,"id":66449,"name":"Havoc Festival","url":"https://store.tcgplayer.com/magic/return-to-ravnica/havoc-festival?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/front/4/e/4e0865d7-3325-489f-bbe6-b7d2a43c23af.jpg?1542634460","is_banned":false}],"cardkingdom":{"price":0.69,"variation":"","name":"Faithless Looting","url":"https://www.cardkingdom.com/mtg/ultimate-masters/faithless-looting?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Faithless Looting","url":"/cards/faithless-looting","label":"19% of 7418 decks","cardhoarder":{"price":"0.54","name":"Faithless Looting","url":"https://www.cardhoarder.com/cards/60739?affiliate_id=edhrec"},"tcgplayer":{"price":1.47,"id":94337,"name":"Faithless Looting","url":"https://store.tcgplayer.com/magic/dark-ascension/faithless-looting?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/99.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":2.99,"variation":"","name":"Blood Artist","url":"https://www.cardkingdom.com/mtg/eternal-masters/blood-artist?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Blood Artist","url":"/cards/blood-artist","label":"19% of 7413 decks","cardhoarder":{"price":"0.05","name":"Blood Artist","url":"https://www.cardhoarder.com/cards/60759?affiliate_id=edhrec"},"tcgplayer":{"price":1.97,"id":118752,"name":"Blood Artist","url":"https://store.tcgplayer.com/magic/avacyn-restored/blood-artist?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/tsp/242.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":6.49,"variation":"","name":"Kaervek the Merciless","url":"https://www.cardkingdom.com/mtg/time-spiral/kaervek-the-merciless?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Kaervek the Merciless","url":"/cards/kaervek-the-merciless","label":"19% of 7439 decks","cardhoarder":{"price":"0.01","name":"Kaervek the Merciless","url":"https://www.cardhoarder.com/cards/25647?affiliate_id=edhrec"},"tcgplayer":{"price":4.69,"id":14273,"name":"Kaervek the Merciless","url":"https://store.tcgplayer.com/magic/time-spiral/kaervek-the-merciless?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/mm2/97.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.25,"variation":"","name":"Sign in Blood","url":"https://www.cardkingdom.com/mtg/2010-core-set/sign-in-blood?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Sign in Blood","url":"/cards/sign-in-blood","label":"19% of 7439 decks","cardhoarder":{"price":"0.04","name":"Sign in Blood","url":"https://www.cardhoarder.com/cards/57138?affiliate_id=edhrec"},"tcgplayer":{"price":0.11,"id":37688,"name":"Sign in Blood","url":"https://store.tcgplayer.com/magic/magic-2010-m10/sign-in-blood?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/som/61.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":5.99,"variation":"","name":"Exsanguinate","url":"https://www.cardkingdom.com/mtg/scars-of-mirrodin/exsanguinate?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Exsanguinate","url":"/cards/exsanguinate","label":"18% of 7433 decks","cardhoarder":{"price":"0.02","name":"Exsanguinate","url":"https://www.cardhoarder.com/cards/38325?affiliate_id=edhrec"},"tcgplayer":{"price":3.48,"id":36342,"name":"Exsanguinate","url":"https://store.tcgplayer.com/magic/scars-of-mirrodin/exsanguinate?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/111.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":3.99,"variation":"","name":"Decree of Pain","url":"https://www.cardkingdom.com/mtg/commander-2017/decree-of-pain?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Decree of Pain","url":"/cards/decree-of-pain","label":"18% of 7445 decks","cardhoarder":{"price":"2.31","name":"Decree of Pain","url":"https://www.cardhoarder.com/cards/59099?affiliate_id=edhrec"},"tcgplayer":{"price":2.54,"id":72089,"name":"Decree of Pain","url":"https://store.tcgplayer.com/magic/scourge/decree-of-pain?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c17/103.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.59,"variation":"","name":"Butcher of Malakir","url":"https://www.cardkingdom.com/mtg/worldwake/butcher-of-malakir?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Butcher of Malakir","url":"/cards/butcher-of-malakir","label":"18% of 7435 decks","cardhoarder":{"price":"0.55","name":"Butcher of Malakir","url":"https://www.cardhoarder.com/cards/54825?affiliate_id=edhrec"},"tcgplayer":{"price":0.28,"id":166753,"name":"Butcher of Malakir","url":"https://store.tcgplayer.com/magic/worldwake/butcher-of-malakir?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/cns/144.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":1.79,"variation":"","name":"Heartless Hidetsugu","url":"https://www.cardkingdom.com/mtg/conspiracy/heartless-hidetsugu?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Heartless Hidetsugu","url":"/cards/heartless-hidetsugu","label":"18% of 7441 decks","cardhoarder":{"price":"0.02","name":"Heartless Hidetsugu","url":"https://www.cardhoarder.com/cards/21809?affiliate_id=edhrec"},"tcgplayer":{"price":1.57,"id":12274,"name":"Heartless Hidetsugu","url":"https://store.tcgplayer.com/magic/betrayers-of-kamigawa/heartless-hidetsugu?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/front/f/d/fd0768df-40c3-4b07-9274-e619cae3dd2b.jpg?1542803736","is_banned":false}],"cardkingdom":{"price":0.39,"variation":"","name":"Anger","url":"https://www.cardkingdom.com/mtg/ultimate-masters/anger?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Anger","url":"/cards/anger","label":"18% of 7445 decks","cardhoarder":{"price":"0.07","name":"Anger","url":"https://www.cardhoarder.com/cards/59077?affiliate_id=edhrec"},"tcgplayer":{"price":2.97,"id":10237,"name":"Anger","url":"https://store.tcgplayer.com/magic/judgment/anger?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/c18/27.jpg?1535502224","is_banned":false}],"cardkingdom":{"price":5.99,"variation":"","name":"Treasure Nabber","url":"https://www.cardkingdom.com/mtg/commander-2018/treasure-nabber?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Treasure Nabber","url":"/cards/treasure-nabber","label":"18% of 234 decks","cardhoarder":null,"tcgplayer":{"price":4.8,"id":170783,"name":"Treasure Nabber","url":"https://store.tcgplayer.com/magic/commander-2018/treasure-nabber?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/cn2/138.jpg?1517813031","is_banned":false}],"cardkingdom":{"price":0.69,"variation":"","name":"Harvester of Souls","url":"https://www.cardkingdom.com/mtg/duel-decks-blessed-vs-cursed/harvester-of-souls?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Harvester of Souls","url":"/cards/harvester-of-souls","label":"17% of 7413 decks","cardhoarder":{"price":"0.03","name":"Harvester of Souls","url":"https://www.cardhoarder.com/cards/43873?affiliate_id=edhrec"},"tcgplayer":{"price":0.37,"id":121844,"name":"Harvester of Souls","url":"https://store.tcgplayer.com/magic/avacyn-restored/harvester-of-souls?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}},{"cards":[{"is_unofficial":false,"is_commander":false,"image":"https://img.scryfall.com/cards/normal/en/xln/104.jpg?1527429011","is_banned":false}],"cardkingdom":{"price":1.29,"variation":"","name":"Dire Fleet Ravager","url":"https://www.cardkingdom.com/mtg/ixalan/dire-fleet-ravager?partner=edhrec&utm_source=edhrec&utm_medium=affiliate&utm_campaign=edhrec"},"name":"Dire Fleet Ravager","url":"/cards/dire-fleet-ravager","label":"17% of 1161 decks","cardhoarder":{"price":"0.11","name":"Dire Fleet Ravager","url":"https://www.cardhoarder.com/cards/65224?affiliate_id=edhrec"},"tcgplayer":{"price":0.6,"id":145601,"name":"Dire Fleet Ravager","url":"https://store.tcgplayer.com/magic/ixalan/dire-fleet-ravager?partner=EDHREC&utm_campaign=affiliate&utm_medium=EDHREC&utm_source=EDHREC"}}],"tag":"rakdosstaples","header":"Rakdos Staples"}]};</script> 
+  <script src="/js/adsbygoogle.js"></script>
+  <script src="/js/bundle-22e62c4c5f.js"></script>
+</body>
+</html>

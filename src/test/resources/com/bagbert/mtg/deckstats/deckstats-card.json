@@ -1,0 +1,43 @@
+{
+	"name": "Hammer of Nazahn",
+	"amount": 1,
+	"valid": true,
+	"comment": "",
+	"set_id": 0,
+	"set_string": "C17",
+	"data": {
+		"cost": "{4}",
+		"color_identity": 2,
+		"cc": 4,
+		"source": {
+			"w": 0,
+			"u": 0,
+			"b": 0,
+			"r": 0,
+			"g": 0,
+			"colorless": 0,
+			"any": 0
+		},
+		"supertype": "Legendary Artifact",
+		"type": "Legendary Artifact - Equipment",
+		"rarity": "R",
+		"display_set_id": 193,
+		"price_mkm": 4.7,
+		"price_mkm_id": "300287,226489",
+		"price_tcgplayer": 10.75,
+		"price_tcgplayer_id": "139786",
+		"price_cardhoarder": 0.35,
+		"price_cardhoarder_id": "65669",
+		"price_cardhoarder_other_set": true,
+		"price_cardkingdom": 15.99
+	},
+	"override": "",
+	"isSideboard": false,
+	"isMaybe": false,
+	"isCommander": false,
+	"isFoil": false,
+	"is_custom_set": false,
+	"sets": {
+		"193": "R"
+	}
+}

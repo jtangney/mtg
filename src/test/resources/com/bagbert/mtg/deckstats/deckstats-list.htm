@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# deckstats: http://ogp.me/ns/fb/deckstats#">
+<script type="text/javascript" src="//deckstats.net/js/merged/merged.deck.1546717603.js" charset="utf-8"></script>
+<title>EDH / Commander Decks &mdash; deckstats.net | Magic: The Gathering Decks</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" sizes="16x16" href="https://deckstats.net/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://deckstats.net/img/logo/deckstats32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="https://deckstats.net/img/logo/deckstats48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://deckstats.net/img/logo/deckstats192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://deckstats.net/img/logo/deckstats512.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://deckstats.net/img/logo/deckstats180.png">
+<meta name="description" content="See all the latest EDH / Commander Magic: The Gathering decks submitted by our users!" />
+<meta name="theme-color" content="#336799" />
+<meta property="fb:admins" content="794549653" />
+<meta property="fb:app_id" content="318919094866464" />
+<meta property="og:site_name" content="deckstats" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EDH / Commander Decks" />
+<meta property="og:description" content="See all the latest EDH / Commander Magic: The Gathering decks submitted by our users!" />
+<meta property="og:image" content="https://deckstats.net/fb/logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@deckstats" />
+<meta name="twitter:title" content="EDH / Commander Decks" />
+<meta name="twitter:description" content="See all the latest EDH / Commander Magic: The Gathering decks submitted by our users!" />
+<meta name="twitter:image" content="https://deckstats.net/fb/logo.png" />
+<link rel="alternate" href="https://deckstats.net/decks/f/edh-commander/?lng=en" hreflang="en" />
+<link rel="alternate" href="https://deckstats.net/decks/f/edh-commander/?lng=de" hreflang="de" />
+<link rel="alternate" href="https://deckstats.net/decks/f/edh-commander/?lng=es" hreflang="es" />
+<link rel="alternate" href="https://deckstats.net/decks/f/edh-commander/?lng=pt" hreflang="pt" />
+<link rel="alternate" href="https://deckstats.net/decks/f/edh-commander/?lng=it" hreflang="it" />
+<link rel="alternate" href="https://deckstats.net/decks/f/edh-commander/?lng=fr" hreflang="fr" />
+<script async src="//deckstats.net/js/t.js"></script>
+
+<script type="text/javascript">
+	    window.cookieconsent_options = {"message":"At deckstats.net we use cookies to remember information between visits and customize our website for you.","dismiss":"Okay!","learnMore":"More info","link":"https:\/\/deckstats.net?lng=en&cookies=1","theme":"dark-bottom"};
+	</script>
+
+
+<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-68718-10']);
+	  _gaq.push(['_setSiteSpeedSampleRate', 10]);
+	  _gaq.push(['_gat._anonymizeIp']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+<script>
+var PATH = "\/\/deckstats.net";
+var LNG = "en";
+var COUNTRY = "GB";
+var user_logged_in = false;
+
+//as a function so it can be called when async loading of cardlink is done
+function nk_cardlink_init() {
+	nk_deckstats_lng = LNG;
+	
+	//https://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/
+	try {
+		if (COUNTRY != 'PL' && 'withCredentials' in new XMLHttpRequest()) {
+			nk_cardlink_external = 'https://www.mtg-forum.de/db/get.php';
+		} else {
+			nk_cardlink_external = PATH+'/db_tunnel.php';
+		}
+	} catch(ex) {
+		//this catches IE8, which may not allow 'new XMLHttpRequest()'
+		nk_cardlink_external = PATH+'/db_tunnel.php';
+	}
+		
+	
+	nk_cardlink_lng = (nk_deckstats_lng == 'de'? 'de' : 'en');
+	nk_use_mana_sprites = true;
+	nk_cardlink_all = true;
+};
+
+nk_cardlink_init();
+
+	//SMF data
+	smf_user_id = 0;	
+	smf_user_name = "Guest";
+	//for session validation in comments
+	smf_session_var = "b870024be7";
+	smf_session_id = "e9abfa80a637a5d534ee60985ebddd1b";
+
+	MTG_FORMATS = {"1":"Casual","6":"Standard","4":"Modern","10":"EDH \/ Commander","16":"Brawl","3":"Legacy","2":"Vintage","9":"Pauper","7":"Highlander","12":"Tiny Leaders","13":"Frontier","11":"Peasant","15":"Penny Dreadful","5":"Extended","8":"Cube","14":"Limited"};
+	MTG_CONDITIONS = {"1":{"code":"NM","name":"Mint\/Near-Mint"},"3":{"code":"LP","name":"Lightly Played"},"4":{"code":"MP","name":"Moderately Played"},"5":{"code":"HP","name":"Heavily Played"},"6":{"code":"DM","name":"Damaged"}};
+	MTG_LANGUAGES = {"1":{"flag":"usgb","name":"English","code":"en"},"2":{"flag":"cn","name":"Chinese","code":"cn"},"3":{"flag":"fr","name":"French","code":"fr"},"4":{"flag":"de","name":"German","code":"de"},"5":{"flag":"it","name":"Italian","code":"it"},"6":{"flag":"jp","name":"Japanese","code":"jp"},"7":{"flag":"kr","name":"Korean","code":"kr"},"8":{"flag":"ptbr","name":"Portuguese","code":"pt"},"9":{"flag":"ru","name":"Russian","code":"ru"},"10":{"flag":"es","name":"Spanish","code":"es"}};
+
+	
+	sets_version = 1546715522;
+
+	
+		
+	$(function(){ search_hide_advanced_rows("format");init_search(); });</script>
+<script src="//deckstats.net/lng.js.1543702414.php?lng=en" charset="utf-8"></script>
+<meta name="viewport" content="width=device-width" />
+
+
+
+
+<link rel="stylesheet" href="//deckstats.net/css/merged/merged.base.1546717421.css">
+<link rel="stylesheet" href="//deckstats.net/css/print.1532811909.css" media="print">
+</head>
+<body class="">
+<div id="header_container">
+<div id='header_left'>
+<a href='https://deckstats.net?lng=en'>
+<img src="https://deckstats.net/img/header_deckstats.png" srcset="https://deckstats.net/img/header_deckstats.png 375w,https://deckstats.net/img/header_deckstats_2x.png 750w" alt="deckstats.net" style="width: 375px; height: 90px;" />
+</a>
+</div>
+<div id='header_right' class="XX_GB_XX">
+<div class="header_small_hide" id="header_right_big">
+<a href="http://bm.hbtronix.de/c/fcc5f8/https://www.cardmarket.com/en/Magic/Expansions/Commander+2018|www" target="_blank" rel="noopener nofollow" class="xbnr xbnr_img xbnr_fcc5f8"><img src="https://deckstats.net/fcc5f8_1c6117b620e3f9859ba27d62bb42ec0e.jpg" style="width: 728px; height: 90px;" /></a> </div>
+<div class="header_small_show">
+<a href="http://bm.hbtronix.de/c/3e4acb/https://www.cardmarket.com/en/Magic/%3Futm_source=deckstats&amp;utm_medium=homepage&amp;utm_campaign=banner_header|www" target="_blank" rel="noopener nofollow" class="xbnr xbnr_img xbnr_3e4acb"><img src="https://deckstats.net/3e4acb_58d0e7d1c242a7a7d2fcabf45995b997.jpg" style="width: 320px; height: 50px;" /></a> </div>
+</div>
+</div>
+<div class="small_screen_submenu_container">
+<div class="small_screen_logo">
+<a href='https://deckstats.net?lng=en'>
+<img src="https://deckstats.net/apple-touch-icon.png" alt="deckstats.net" style="width: 30px; height: 30px;" />
+</a>
+</div>
+<div id="submenu">
+<div class="small_screen_toggle_button">&#9776; Menu</div>
+<p class="home small_screen_toggle_content">
+<a href='https://deckstats.net?lng=en'>Home</a>
+<a href='https://deckstats.net/deckbuilder/en/'>Deckbuilder</a>
+<a href='https://deckstats.net/forum/?language=english-utf8'>Forum</a>
+<a href='https://deckstats.net/decks/?lng=en'>Decks</a>
+<a href='https://deckstats.net/decks/top/?lng=en'>Top Decks</a>
+<a href='https://deckstats.net/decks/search/?lng=en'>Deck Search</a>
+<a href='https://deckstats.net/sets/?lng=en'>Sets</a>
+</p>
+<div id="user_in_header" class="login_in_header">
+<a href="#" id="login_menu_segment" class="segment rightmost_segment"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+<div id="login_register_segments">
+<form action="https://deckstats.net/forum/index.php?language=english-utf8&amp;action=login2" method="post" accept-charset="UTF-8" id="login_form_in_header">
+<input type="hidden" name="b870024be7" value="e9abfa80a637a5d534ee60985ebddd1b" />
+<div class="segment_container">
+<div class="login_register_dialog_row">
+<input type="text" name="user" size="10" class="text" placeholder="Username" />
+</div>
+<div class="login_register_dialog_row">
+<input type="password" name="passwrd" size="10" class="text" placeholder="Password" />
+<input type="hidden" name="cookielength" value="-1" />
+</div>
+<div class="login_register_dialog_row">
+<a href="#" id="user_login_segment">
+Login </a>
+</div>
+</div>
+</form>
+<div class="login_register_dialog_row">
+<a href="https://deckstats.net/forum/index.php?language=english-utf8&amp;action=register" id="user_register_segment" class="rightmost_segment">
+Register </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="deckstats_main_container">
+<div id="eventbar_toggle"></div>
+<div id="eventbar_container">
+<div id="eventbar"></div>
+</div>
+<div id="page_title_container">
+<h2 id="subtitle">EDH / Commander Decks</h2> </div>
+<div id="page_container">
+<div id="page"><div style="overflow: hidden;">
+<div id="deck_search_form">
+<div class="ui-widget-content ui-corner-all">
+<h3 class="ui-widget-header ui-corner-all">
+Search Decks </h3>
+<div class="inhalt2">
+<form method="get" action="https://deckstats.net/decks/search/" accept-charset="utf-8">
+<input type="hidden" name="lng" value="en" />
+<div class="search_row_container search_row_no_collapse_title">
+<label for="search_title">Title/description contains</label>
+<div class="search_fields_container">
+<input type="text" id="search_title" name="search_title" value="" class="text ui-corner-all" />
+</div>
+</div>
+<div class="search_row_container search_row_no_collapse_format">
+<label for="search_format">Format</label>
+<div class="search_fields_container">
+<select name="search_format" id="search_format" class="text ui-corner-all">
+<option value="0"></option>
+<option value="1">
+Casual </option>
+<option value="6">
+Standard </option>
+<option value="4">
+Modern </option>
+<option value="10" selected="selected">
+EDH / Commander </option>
+<option value="16">
+Brawl </option>
+<option value="3">
+Legacy </option>
+<option value="2">
+Vintage </option>
+<option value="9">
+Pauper </option>
+<option value="7">
+Highlander </option>
+<option value="12">
+Tiny Leaders </option>
+<option value="13">
+Frontier </option>
+<option value="11">
+Peasant </option>
+<option value="15">
+Penny Dreadful </option>
+<option value="5">
+Extended </option>
+<option value="8">
+Cube </option>
+<option value="14">
+Limited </option>
+<option value="9999">
+other </option>
+</select>
+</div>
+</div>
+<div class="search_row_container search_row_no_collapse_format" id="search_season_container">
+<label for="search_season">Season</label>
+<div class="search_fields_container">
+<select name="search_season" id="search_season" class="text ui-corner-all" data-prefill="">
+<option value="0" class="deck_season_fixed">
+</select>
+</div>
+</div>
+<div class="search_row_container">
+<label for="search_price_min">Estimated Price Range</label>
+<div class="search_fields_container">
+Min.: <input type="text" id="search_price_min" name="search_price_min" value="" placeholder="0" class="text ui-corner-all" />
+$
+&nbsp;
+Max.:
+<input type="text" id="search_price_max" name="search_price_max" value="" placeholder="" class="text ui-corner-all" />
+$
+</div>
+</div>
+<div class="search_row_container">
+<label for="search_colors">Colors</label>
+<div class="search_fields_container">
+<div class="search_colors">
+<label class="color_label color_label_W">
+<input type="checkbox" name="search_colors[]" value="W">
+<span style="">White</span></label>
+<label class="color_label color_label_U">
+<input type="checkbox" name="search_colors[]" value="U">
+<span>Blue</span></label>
+<label class="color_label color_label_B">
+<input type="checkbox" name="search_colors[]" value="B">
+<span>Black</span></label>
+</div>
+<div class="search_colors">
+<label class="color_label color_label_R">
+<input type="checkbox" name="search_colors[]" value="R">
+<span>Red</span></label>
+<label class="color_label color_label_G">
+<input type="checkbox" name="search_colors[]" value="G">
+<span>Green</span></label>
+</div>
+</div>
+</div>
+<div class="search_row_container">
+<label for="search_number_cards_main">Amount of Cards</label>
+<div class="search_fields_container">
+<label class="notitle">
+Exactly <input type="text" id="search_number_cards_main" name="search_number_cards_main" value="" placeholder="e.g. 60" class="text ui-corner-all" />
+in main deck </label>
+<label class="notitle">
+Exactly <input type="text" id="search_number_cards_sideboard" name="search_number_cards_sideboard" value="" placeholder="e.g. 15" class="text ui-corner-all" />
+in sideboard </label>
+</div>
+</div>
+<div class="search_row_container">
+<label for="search_card_new">Deck contains</label>
+<div class="search_fields_container">
+<div class="search_card_container" id="search_card_new">
+<input type="text" name="search_cards[]" class="text ui-corner-all search_card_field" placeholder="Enter Card Name" />
+</div>
+<div id="add_search_card_field_container">
+<a href="#" id="add_search_card_field">Add another</a>
+</div>
+</div>
+</div>
+<div class="search_row_container search_row_no_collapse_tags">
+<label>Deck has tags</label>
+<div class="search_fields_container">
+<input name="search_tags" id="search_tags" value="" />
+</div>
+</div>
+<div class="search_row_container">
+<div class="search_fields_container">
+<label style="font-weight: normal;">
+<input type="checkbox" name="search_show_incomplete" id="search_show_incomplete" value="1" style="width: auto; display: inline; margin-right: 4px;" />
+Show incomplete decks </label>
+</div>
+</div>
+<div class="search_row_container">
+<label for="search_age_max_days">Maximum age</label>
+<div class="search_fields_container">
+<select name="search_age_max_days" id="search_age_max_days" class="text ui-corner-all">
+<option value="0"></option>
+<option value="7">
+7 days </option>
+<option value="30">
+30 days </option>
+<option value="365">
+a year </option>
+<option value="custom">
+custom </option>
+</select>
+</div>
+<div class="search_fields_container" id="search_age_max_days_custom_container">
+<div style="flex: 1; margin-right: 6px;">
+<input style="width: 100%;" type="text" id="search_age_max_days_custom" name="search_age_max_days_custom" value="" class="text ui-corner-all" />
+</div>
+<div>
+days </div>
+</div>
+</div>
+<div class="search_row_container">
+<label for="search_order">Sort by</label>
+<div class="search_fields_container">
+<select name="search_order" id="search_order" class="text ui-corner-all">
+<option value="updated,desc">
+Last updated </option>
+<option value="likes,desc">
+Likes </option>
+<option value="views,desc">
+Views </option>
+<option value="price,asc">
+Est. Price, low-high </option>
+<option value="price,desc">
+Est. Price, high-low </option>
+<option value="name,asc">
+Name, A-Z </option>
+<option value="name,desc">
+Name, Z-A </option>
+</select>
+</div>
+</div>
+<div class="search_fields_container" id="search_advanced_button_container">
+<button type="button">More Options</button>
+</div>
+<div id="search_button_container">
+<button type="submit" id="search_button">Search Decks</button>
+</div>
+<input type="hidden" name="utf8" value="&#x2714;" />
+</form>
+</div>
+</div>
+<div class="ui-widget-content ui-corner-all" style="margin-top: .5em;">
+<div class="inhalt2">
+<a href="https://deckstats.net/deckbuilder/en/?prefill_deck_format=10" class="search_new_deck_button">
+New EDH / Commander Deck</a>
+</div>
+</div>
+</div>
+<div class="ui-widget-content ui-corner-all deck_search_right" id="deck_search_results">
+<h3 class="ui-widget-header ui-corner-all">
+EDH / Commander Decks </h3>
+<div class="inhalt2">
+<div class="page_buttons page_button_buttonset"><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=1" class="page_button_active ui-state-active">1</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=2" class="">2</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=3" class="">3</a><span class="button_disabled">&hellip;</span><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=498" class="">498</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=499" class="">499</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=500" class="">500</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=2" class="">&gt;</a></div>
+<div class="decks_list_container">
+<table class="decks_list">
+<tr>
+<th></th> <th>
+<a href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_order=name%2casc" class="sort_link"> Deck name </a> </th>
+<th>
+<a href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_order=updated%2casc" class="sort_link"> Last updated <i class="fa fa-caret-down search_order_icon" aria-hidden="true" title="Sorted in descending order"></i> </a> </th>
+<th>By</th> <th style="text-align: right;">
+<a href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_order=likes%2cdesc" class="sort_link"> Likes </a> </th>
+<th style="text-align: right;">
+<a href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_order=price%2cdesc" class="sort_link"> Price </a> </th>
+<th style="text-align: right;">
+<a href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_order=views%2cdesc" class="sort_link"> Views </a> </th>
+</tr>
+<tr class="touch_row" data-deck-id="1181108">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/0.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/89648/1181108-dd/en">
+DD</a>
+</td>
+<td>12 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/89648/?lng=en">
+Batbabse666 </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$419 </td> <td class="decks_list_views_col">
+12 </td> </tr>
+<tr class="touch_row" data-deck-id="1182069">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/5.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/17781/1182069-athreos-edh/en">
+Athreos EDH</a>
+</td>
+<td>14 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/17781/?lng=en">
+Bassti </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$812 </td> <td class="decks_list_views_col">
+25 </td> </tr>
+<tr class="touch_row" data-deck-id="1183709">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/18.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/91243/1183709-kingrel-and-kingrel-s-family/en">
+Kingrel and Kingrel&#039;s family</a>
+</td>
+<td>14 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/91243/?lng=en">
+Red Scoresby </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$92 </td> <td class="decks_list_views_col">
+1 </td> </tr>
+<tr class="touch_row" data-deck-id="928665">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/31.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/61523/928665-ramos-charm/en">
+Ramos charm</a>
+</td>
+<td>20 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/61523/?lng=en">
+Kreatios </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$262 </td> <td class="decks_list_views_col">
+32 </td> </tr>
+<tr class="touch_row" data-deck-id="1177160">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/2.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/122913/1177160-can-t-touch-this/en">
+Can&#039;t Touch This</a>
+</td>
+<td>36 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/122913/?lng=en">
+w_nightshade </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$178 </td> <td class="decks_list_views_col">
+22 </td> </tr>
+<tr class="touch_row" data-deck-id="1090028">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/4.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/115597/1090028-26-shades-of-marrow-gnawer/en">
+26 Shades of Marrow-Gnawer</a>
+</td>
+<td>46 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/115597/?lng=en">
+RuFFiaNReX </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$375 </td> <td class="decks_list_views_col">
+259 </td> </tr>
+<tr class="touch_row" data-deck-id="1088232">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/5.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/115597/1088232-fat-joe-and-the-lifeconnection/en">
+Fat Joe and the Lifeconnection</a>
+</td>
+<td>56 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/115597/?lng=en">
+RuFFiaNReX </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$305 </td> <td class="decks_list_views_col">
+243 </td> </tr>
+<tr class="touch_row" data-deck-id="1091261">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/31.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/101236/1091261-edh-scion-tribal-combo/en">
+Edh Scion tribal combo</a>
+</td>
+<td>57 minutes ago</td> <td>
+<a href="https://deckstats.net/decks/101236/?lng=en">
+pdmalmeida </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$895 </td> <td class="decks_list_views_col">
+111 </td> </tr>
+<tr class="touch_row" data-deck-id="1090224">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/16.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/115597/1090224-elve-s-pam/en">
+Elve&acute;s Pam</a>
+</td>
+<td>an hour ago</td> <td>
+<a href="https://deckstats.net/decks/115597/?lng=en">
+RuFFiaNReX </a>
+</td> <td class="decks_list_likes_col">
+<span class="fa fa-star"></span>
+1 </td>
+<td class="decks_list_price_col">
+$700 </td> <td class="decks_list_views_col">
+279 </td> </tr>
+<tr class="touch_row" data-deck-id="1158109">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/20.png" alt="Deck"></td>
+ <td>
+<a href="https://deckstats.net/decks/104999/1158109-meren-reanimation/en">
+Meren Reanimation</a>
+</td>
+<td>an hour ago</td> <td>
+<a href="https://deckstats.net/decks/104999/?lng=en">
+Siegenot </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$430 </td> <td class="decks_list_views_col">
+31 </td> </tr>
+<tr class="touch_row" data-deck-id="888178">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/25.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/100676/888178-palladia-mors-the-ruiner-encha/en">
+Palladia-Mors, the Ruiner - Enchantress / Voltron: Neo Bahamut</a>
+</td>
+<td>an hour ago</td> <td>
+<a href="https://deckstats.net/decks/100676/?lng=en">
+Saltberry </a>
+</td> <td class="decks_list_likes_col">
+<span class="fa fa-star"></span>
+3 </td>
+<td class="decks_list_price_col">
+$300 </td> <td class="decks_list_views_col">
+15,249 </td> </tr>
+<tr class="touch_row" data-deck-id="1158097">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/31.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/104999/1158097-the-ur-dragon-dragons/en">
+The Ur-Dragon Dragons</a>
+</td>
+<td>an hour ago</td> <td>
+<a href="https://deckstats.net/decks/104999/?lng=en">
+Siegenot </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$269 </td> <td class="decks_list_views_col">
+24 </td> </tr>
+<tr class="touch_row" data-deck-id="794206">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/21.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/65696/794206-saprolingi-di-pitagora-rebirth/en">
+Saprolingi di Pitagora &ndash; Rebirth</a>
+</td>
+<td>an hour ago</td> <td>
+<a href="https://deckstats.net/decks/65696/?lng=en">
+GodWrath300 </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$414 </td> <td class="decks_list_views_col">
+79 </td> </tr>
+<tr class="touch_row" data-deck-id="1183641">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/16.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/123495/1183641-hydra/en">
+Hydra</a>
+</td>
+<td>an hour ago</td> <td>
+<a href="https://deckstats.net/decks/123495/?lng=en">
+thedarkwanderer </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$355 </td> <td class="decks_list_views_col">
+4 </td> </tr>
+<tr class="touch_row" data-deck-id="1160986">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/12.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/63726/1160986-sleeping-politics-br/en">
+ Sleeping Politics BR</a>
+</td>
+<td>2 hours ago</td> <td>
+<a href="https://deckstats.net/decks/63726/?lng=en">
+Ruggio Shaggy </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$1,543 </td> <td class="decks_list_views_col">
+139 </td> </tr>
+<tr class="touch_row" data-deck-id="1149532">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/23.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/111848/1149532-atraxas-big-friends/en">
+Atraxas big friends</a>
+</td>
+<td>2 hours ago</td> <td>
+<a href="https://deckstats.net/decks/111848/?lng=en">
+Arcades </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$445 </td> <td class="decks_list_views_col">
+32 </td> </tr>
+<tr class="touch_row" data-deck-id="1173596">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/27.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/92816/1173596-turbo-fog/en">
+Turbo Fog</a>
+</td>
+<td>2 hours ago</td> <td>
+<a href="https://deckstats.net/decks/92816/?lng=en">
+hxxzr </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$189 </td> <td class="decks_list_views_col">
+28 </td> </tr>
+<tr class="touch_row" data-deck-id="1111443">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/14.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/106816/1111443-sedris/en">
+Sedris</a>
+</td>
+<td>2 hours ago</td> <td>
+<a href="https://deckstats.net/decks/106816/?lng=en">
+bohljunior </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$424 </td> <td class="decks_list_views_col">
+114 </td> </tr>
+<tr class="touch_row" data-deck-id="1068597">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/10.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/102968/1068597-saheeli-tecnico-di-laboratorio/en">
+Saheeli, Tecnico di Laboratorio</a>
+</td>
+<td>2 hours ago</td> <td>
+<a href="https://deckstats.net/decks/102968/?lng=en">
+mwarclock </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$633 </td> <td class="decks_list_views_col">
+272 </td> </tr>
+<tr class="touch_row" data-deck-id="1070805">
+<td class='decks_list_colors'><img src="https://deckstats.net/cache/color_img/60/31.png" alt="Deck"></td>
+<td>
+<a href="https://deckstats.net/decks/92816/1070805-atogatogatogatog/en">
+Atogatogatogatog</a>
+</td>
+<td>2 hours ago</td> <td>
+<a href="https://deckstats.net/decks/92816/?lng=en">
+hxxzr </a>
+</td> <td class="decks_list_likes_col">
+</td>
+<td class="decks_list_price_col">
+$100 </td> <td class="decks_list_views_col">
+169 </td> </tr>
+</table>
+</div>
+<div class="page_buttons page_button_buttonset"><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=1" class="page_button_active ui-state-active">1</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=2" class="">2</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=3" class="">3</a><span class="button_disabled">&hellip;</span><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=498" class="">498</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=499" class="">499</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=500" class="">500</a><a href="https://deckstats.net/decks/f/edh-commander/?lng=en&page=2" class="">&gt;</a></div>
+</div>
+</div>
+<div class="ui-widget-content ui-corner-all deck_search_right">
+<h3 class="ui-widget-header ui-corner-all">
+Popular Tags </h3>
+<div class="inhalt2 tagcloud">
+<a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Abzan">Abzan</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Affinity">Affinity</a> <a class="tagcloud_tag" style="font-size: 19pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Aggro">Aggro</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=AKH">AKH</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Angel">Angel</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Artifact">Artifact</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Bant">Bant</a> <a class="tagcloud_tag" style="font-size: 17pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Black">Black</a> <a class="tagcloud_tag" style="font-size: 14pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Blue">Blue</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Boros">Boros</a> <a class="tagcloud_tag" style="font-size: 19pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Budget">Budget</a> <a class="tagcloud_tag" style="font-size: 15pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Burn">Burn</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Casual">Casual</a> <a class="tagcloud_tag" style="font-size: 16pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Combo">Combo</a> <a class="tagcloud_tag" style="font-size: 18pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Commander">Commander</a> <a class="tagcloud_tag" style="font-size: 24pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Control">Control</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Counters">Counters</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Death">Death</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Dimir">Dimir</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Discard">Discard</a> <a class="tagcloud_tag" style="font-size: 17pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=DOM">DOM</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Dragon">Dragon</a> <a class="tagcloud_tag" style="font-size: 26pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=EDH">EDH</a> <a class="tagcloud_tag" style="font-size: 14pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Eldrazi">Eldrazi</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Elf">Elf</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Enchantment">Enchantment</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Esper">Esper</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Goblin">Goblin</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Golgari">Golgari</a> <a class="tagcloud_tag" style="font-size: 15pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Green">Green</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Grixis">Grixis</a> <a class="tagcloud_tag" style="font-size: 15pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Grn">Grn</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Human">Human</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Infect">Infect</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Izzet">Izzet</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Jeskai">Jeskai</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Jund">Jund</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=KLD">KLD</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Land">Land</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Legacy">Legacy</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Life">Life</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Lifegain">Lifegain</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=M19">M19</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mardu">Mardu</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Merfolk">Merfolk</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Midrange">Midrange</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mill">Mill</a> <a class="tagcloud_tag" style="font-size: 20pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Modern">Modern</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mono+Black">Mono Black</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mono+Blue">Mono Blue</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mono+Green">Mono Green</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mono+Red">Mono Red</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Mono+White">Mono White</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Naya">Naya</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Orzhov">Orzhov</a> <a class="tagcloud_tag" style="font-size: 14pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Pauper">Pauper</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Rakdos">Rakdos</a> <a class="tagcloud_tag" style="font-size: 11pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Ramp">Ramp</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Reanimator">Reanimator</a> <a class="tagcloud_tag" style="font-size: 15pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Red">Red</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=RIX">RIX</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Sacrifice">Sacrifice</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Simic">Simic</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Sliver">Sliver</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Spirit">Spirit</a> <a class="tagcloud_tag" style="font-size: 16pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Standard">Standard</a> <a class="tagcloud_tag" style="font-size: 9pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Storm">Storm</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Sultai">Sultai</a> <a class="tagcloud_tag" style="font-size: 10pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Temur">Temur</a> <a class="tagcloud_tag" style="font-size: 17pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Token">Token</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Tribal">Tribal</a> <a class="tagcloud_tag" style="font-size: 12pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Vampire">Vampire</a> <a class="tagcloud_tag" style="font-size: 15pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=White">White</a> <a class="tagcloud_tag" style="font-size: 21pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=XLN">XLN</a> <a class="tagcloud_tag" style="font-size: 13pt;" href="https://deckstats.net/decks/f/edh-commander/?lng=en&amp;search_tags=Zombie">Zombie</a> </div>
+</div>
+</div></div>
+<div id="page_loading"></div>
+</div>
+<div id="eventbar_footer">
+<div class="eventbar_footer_row">
+<a href="https://www.facebook.com/deckstats/" target="_blank" rel="noopener">
+<i class="fa fa-facebook-official" aria-hidden="true"></i>
+deckstats.net
+</a>
+</div>
+<div class="eventbar_footer_row">
+<a href="https://twitter.com/deckstats" target="_blank" rel="noopener">
+<i class="fa fa-twitter" aria-hidden="true"></i>
+@deckstats
+</a>
+</div>
+</div>
+<div id="footer_container">
+<div id="footer_full">
+<div class="footer_links">
+<a href='https://deckstats.net/members/?lng=en'>Members</a>
+| <a href='https://deckstats.net/?lng=en&amp;about=1'>About Us</a>
+| <a href="http://koelling.co.uk/disclaimer_en.php" target="_blank" title="Privacy Policy">Privacy Policy</a>
+</div>
+<div id="language_bar">
+<div id="language_button" title="Select Language">
+<span id="language_bar_title">Language</span>
+<i class="fa fa-caret-up" aria-hidden="true"></i>
+</div>
+<div id="language_flags">
+<a data-code="en" class="language_link language_link_en" href="https://deckstats.net/decks/f/edh-commander/?lng=en"><img src="https://i.hbtronix.de/flags/usgb.png" alt="en" width="16" height="11" /></a>
+<a data-code="de" class="language_link language_link_de" href="https://deckstats.net/decks/f/edh-commander/?lng=de"><img src="https://i.hbtronix.de/flags/de.png" alt="de" width="16" height="11" /></a>
+<a data-code="es" class="language_link language_link_es" href="https://deckstats.net/decks/f/edh-commander/?lng=es"><img src="https://i.hbtronix.de/flags/es.png" alt="es" width="16" height="11" /></a>
+<a data-code="pt" class="language_link language_link_pt" href="https://deckstats.net/decks/f/edh-commander/?lng=pt"><img src="https://i.hbtronix.de/flags/ptbr.png" alt="pt" width="16" height="11" /></a>
+<a data-code="it" class="language_link language_link_it" href="https://deckstats.net/decks/f/edh-commander/?lng=it"><img src="https://i.hbtronix.de/flags/it.png" alt="it" width="16" height="11" /></a>
+<a data-code="fr" class="language_link language_link_fr" href="https://deckstats.net/decks/f/edh-commander/?lng=fr"><img src="https://i.hbtronix.de/flags/fr.png" alt="fr" width="16" height="11" /></a>
+</div>
+</div>
+<div id="copyright_notice" lang="en">
+deckstats.net &copy; 2019. All rights reserved.
+Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. &copy; 2009 Wizards. All Rights Reserved.
+<span onclick="jQuery('#copyright_details').show(); jQuery(this).hide();" style="cursor: pointer; text-decoration: underline;">more...</span>
+<div id="copyright_details" style="display: none">
+This web site is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.
+This web site may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' Fan Site Policy. For example, MAGIC: THE GATHERING(r) is a trademark of Wizards of the Coast.
+For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at (www.wizards.com).
+All information is subject to change without prior notice. Although we try to present current and accurate information, we cannot make any guarantees of any kind.
+Responsibility for comments, forum posts, messages and any other user-generated content lies with their respective authors.
+We do not monitor or necessarily agree with any personal opinions or other expressions published in any such content.
+(0.15 sec)
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul id="language_menu" class="deck_menu">
+<li><a data-code="en" class="language_link language_link_en" href="https://deckstats.net/decks/f/edh-commander/?lng=en"><img src="https://i.hbtronix.de/flags/usgb.png" alt="en" width="16" height="11" /> English</a>
+<li><a data-code="de" class="language_link language_link_de" href="https://deckstats.net/decks/f/edh-commander/?lng=de"><img src="https://i.hbtronix.de/flags/de.png" alt="de" width="16" height="11" /> Deutsch</a>
+<li><a data-code="es" class="language_link language_link_es" href="https://deckstats.net/decks/f/edh-commander/?lng=es"><img src="https://i.hbtronix.de/flags/es.png" alt="es" width="16" height="11" /> Espa&ntilde;ol</a>
+<li><a data-code="pt" class="language_link language_link_pt" href="https://deckstats.net/decks/f/edh-commander/?lng=pt"><img src="https://i.hbtronix.de/flags/ptbr.png" alt="pt" width="16" height="11" /> Portugu&ecirc;s</a>
+<li><a data-code="it" class="language_link language_link_it" href="https://deckstats.net/decks/f/edh-commander/?lng=it"><img src="https://i.hbtronix.de/flags/it.png" alt="it" width="16" height="11" /> Italiano</a>
+<li><a data-code="fr" class="language_link language_link_fr" href="https://deckstats.net/decks/f/edh-commander/?lng=fr"><img src="https://i.hbtronix.de/flags/fr.png" alt="fr" width="16" height="11" /> Fran&ccedil;ais</a>
+</ul>
+<div id="wait_dialog" class="any_dialog" title="Please Wait">
+<p style="text-align: center;"><img src="https://i.hbtronix.de/common/loading_bar.gif" alt="loading" /></p>
+<p>Please wait, loading...</p>
+</div>
+<div id="session_error_dialog" class="any_dialog" title="Session error">
+<p>
+An error with your login session occured: </p>
+<p>
+<span id="session_error_text">unknown</span>
+</p>
+<p>
+You can do this in a different tab to avoid losing the data you entered here. Once you are done, click the <b>Refresh Session</b> button and then try again.	</p>
+<p>
+If the problem persists, please contact us.	</p>
+</div>
+<script src="//deckstats.net/js/shariff.min.js"></script>
+</body>
+</html>

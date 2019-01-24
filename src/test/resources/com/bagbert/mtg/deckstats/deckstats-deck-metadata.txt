@@ -1,0 +1,13 @@
+	is_stats = true;
+	edit_deck_id = 1124983;
+	copy_deck_id = 0;
+	deck_like_members = [];
+
+			deck_id_type = 'saved';
+		deck_id = 1124983;
+		deck_owner_id = 5482;
+		deck_key = "";
+		deck_revision1 = 2;
+		
+	deck_updated = 1540908616;
+	deck_cmc = 4.1230769230769;

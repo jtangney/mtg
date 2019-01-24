@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>${app.id}</application>
+  <version>${app.version}</version>
+  <threadsafe>false</threadsafe>
+  <runtime>java8</runtime>
+
+  <system-properties>
+    <property name="ui4j.headless" value="true" />
+    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
+  </system-properties>
+  
+  <automatic-scaling>
+    <target-cpu-utilization>0.95</target-cpu-utilization>
+    <max-instances>2</max-instances>
+  </automatic-scaling>
+</appengine-web-app>
