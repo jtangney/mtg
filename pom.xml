@@ -157,6 +157,7 @@
         <version>2.4</version>
         <configuration>
           <archiveClasses>true</archiveClasses>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
           <webResources>
             <!-- in order to interpolate version from pom into appengine-web.xml -->
             <resource>
