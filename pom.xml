@@ -75,6 +75,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
+      <groupId>com.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>4.1</version>
+    </dependency>
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.5</version>
@@ -168,7 +173,21 @@
           </webResources>
         </configuration>
       </plugin>
-
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <project>${app.id}</project>
+          <version>${app.version}</version>
+          <jvmFlags>
+            <jvmFlag>-Dappengine.fullscan.seconds=5</jvmFlag>
+            <jvmFlag>-Xdebug</jvmFlag>
+            <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8008,server=y,suspend=n</jvmFlag>
+          </jvmFlags>
+        </configuration>
+      </plugin>
+      <!--
       <plugin>
         <groupId>com.google.appengine</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
@@ -180,15 +199,6 @@
             <jvmFlag>-Xdebug</jvmFlag>
             <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8008,server=y,suspend=n</jvmFlag>
           </jvmFlags>
-        </configuration>
-      </plugin>
-      <!--  
-      <plugin>
-        <groupId>com.google.appengine</groupId>
-        <artifactId>gcloud-maven-plugin</artifactId>
-        <version>${gcloud.plugin.version}</version>
-        <configuration>
-          <set_default>true</set_default>
         </configuration>
       </plugin>
       -->
