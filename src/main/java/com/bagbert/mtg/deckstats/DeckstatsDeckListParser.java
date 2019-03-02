@@ -1,5 +1,7 @@
 package com.bagbert.mtg.deckstats;
 
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
@@ -7,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.bagbert.mtg.Constants;
+import com.bagbert.mtg.utils.MtgUtils;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
@@ -18,16 +22,15 @@ import com.bagbert.commons.football.exec.Parser;
 import com.bagbert.commons.football.exec.ResultSet;
 import com.bagbert.mtg.MtgResultSet;
 
-public class DeckstatsDeckListParser implements Parser<Document, DeckstatsListItem> {
-
-  private String dir;
-
-  public DeckstatsDeckListParser(String dir) {
-    this.dir = dir;
-  }
+public class DeckstatsDeckListParser extends AbstractDeckstatsParser
+    implements Parser<Document, DeckstatsListItem> {
 
   public DeckstatsDeckListParser() {
-    this("commander-decklists");
+    this(null);
+  }
+
+  public DeckstatsDeckListParser(String cardName) {
+    super("commander-decklists", cardName);
   }
 
   @Override
@@ -36,35 +39,39 @@ public class DeckstatsDeckListParser implements Parser<Document, DeckstatsListIt
     Element listTable = input.select("table.decks_list").first();
     Elements rows = listTable.select("tr.touch_row");
     Set<DeckstatsListItem> items = new ListOrderedSet<>();
+    Date scrapeTime = new Date();
     for (Element row : rows) {
       String deckId = row.attr("data-deck-id");
       Elements cells = row.select("td");
       String deckUrl = cells.get(1).select("a").attr("href");
       String deckPath = StringUtils.substringAfter(deckUrl, "deckstats.net");
       String deckName = cells.get(1).text();
-      String lastUpdatedStr = cells.get(2).ownText();
+      // work backwards as sometimes have intervening cols
+      String views = cells.last().ownText();
+      String price = cells.get(cells.size() - 2).ownText();
+      String likes = cells.get(cells.size() - 3).ownText();
+      String userName = cells.get(cells.size() - 4).text();
+      String userId = extractUserId(cells.get(cells.size() - 4));
+      String lastUpdatedStr = cells.get(cells.size() - 5).ownText();
       Date lastUpdated = this.parseLastUpdated(lastUpdatedStr);
-      String userName = cells.get(3).text();
-      String userId = extractUserId(cells.get(3));
-      String likes = cells.get(4).ownText();
-      String price = cells.get(5).ownText();
-      String views = cells.get(6).ownText();
       items.add(toListItem(deckId, deckName, userId, userName, likes, price, views, deckPath,
-          lastUpdated));
+          lastUpdated, scrapeTime));
     }
-    String path = String.format("%s/%s", "deckstats", dir);
-    String[] fileNameTokens = new String[] { "deckstats", dir, "page-" + pageNumber };
+
+    String path = buildPath();
+    String[] fileNameTokens = new String[] { com.bagbert.commons.football.tools.DateUtils.toYYYYMMDD(new Date()),
+        "page-" + pageNumber };
     return new MtgResultSet<>(path, items, fileNameTokens);
   }
 
   public DeckstatsListItem toListItem(String deckId, String deckName, String userId,
-      String userName, String likes, String price, String views, String deckUrl, Date updated) {
+      String userName, String likes, String price, String views, String deckUrl, Date updated, Date scrapeTime) {
     Integer dId = safeParseInt(deckId);
     Integer uId = safeParseInt(userId);
     Integer l = safeParseInt(retainOnlyDigits(likes));
     Integer v = safeParseInt(retainOnlyDigits(views));
     Integer p = safeParseInt(retainOnlyDigits(price));
-    return new DeckstatsListItem(dId, deckName, uId, userName, l, p, v, deckUrl, updated);
+    return new DeckstatsListItem(dId, deckName, uId, userName, l, p, v, deckUrl, updated, scrapeTime);
   }
 
   private Integer safeParseInt(String input) {
@@ -119,7 +126,7 @@ public class DeckstatsDeckListParser implements Parser<Document, DeckstatsListIt
       if (elements.length != 3) {
         return null;
       }
-      int qty = Integer.parseInt(elements[0]);
+      int qty = StringUtils.equals("a", "an") ? 1 : Integer.parseInt(elements[0]);
       long offset = toMillisOffset(qty, elements[1]);
       Date date = new Date(input.getTime() - offset);
       Date truncated = truncateDate(date, elements[1]);

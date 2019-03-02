@@ -27,17 +27,18 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class DeckstatsDeckParser implements Parser<Document, DeckstatsDeckCard> {
+public class DeckstatsDeckParser extends AbstractDeckstatsParser
+    implements Parser<Document, DeckstatsDeckCard> {
 
   private static final Logger LOG = Logger.getLogger(DeckstatsDeckParser.class.getName());
   private String dir;
 
-  public DeckstatsDeckParser(String dir) {
-    this.dir = dir;
+  public DeckstatsDeckParser() {
+    this(null);
   }
 
-  public DeckstatsDeckParser() {
-    this("commander-decks");
+  public DeckstatsDeckParser(String cardName) {
+    super("commander-decks", cardName);
   }
 
   @Override
@@ -91,7 +92,7 @@ public class DeckstatsDeckParser implements Parser<Document, DeckstatsDeckCard> 
       results.add(deckCard);
     }
 
-    String path = String.format("%s/%s", "deckstats", dir);
+    String path = super.buildPath();
     return new MtgResultSet<>(path, results, deckIdName, String.valueOf(deckRevision));
   }
 

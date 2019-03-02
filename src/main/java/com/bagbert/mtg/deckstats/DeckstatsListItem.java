@@ -28,9 +28,13 @@ public class DeckstatsListItem {
   @CsvDate("yyyyMMdd-HH:mm:ssXX")
   @CsvBindByPosition(position = 8)
   private Date lastUpdated;
+  @CsvDate("yyyyMMdd-HH:mm:ssXX")
+  @CsvBindByPosition(position = 9)
+  private Date scrapeTime;
+
 
   public DeckstatsListItem(Integer deckId, String deckName, Integer userId, String userName,
-      Integer likes, Integer price, Integer views, String deckUrl, Date lastUpdated) {
+      Integer likes, Integer price, Integer views, String deckUrl, Date lastUpdated, Date scrapeTime) {
     this.deckId = deckId;
     this.deckName = deckName;
     this.userId = userId;
@@ -40,6 +44,7 @@ public class DeckstatsListItem {
     this.views = views;
     this.deckUrl = deckUrl;
     this.lastUpdated = lastUpdated;
+    this.scrapeTime = scrapeTime;
   }
 
   public Integer getDeckId() {
@@ -76,6 +81,10 @@ public class DeckstatsListItem {
 
   public Date getLastUpdated() {
     return this.lastUpdated;
+  }
+
+  public Date getScrapeTime() {
+    return this.scrapeTime;
   }
 
   @Override

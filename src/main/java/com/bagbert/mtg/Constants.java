@@ -7,4 +7,6 @@ public interface Constants {
   String DEFAULT_REGION = "europe-west1";
 
   String DECK_QUEUE = "deck-queue";
+
+  String SOURCE_DECKSTATS = "deckstats";
 }
