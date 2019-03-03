@@ -4,14 +4,19 @@ import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.bagbert.commons.football.exec.*;
+import com.bagbert.commons.football.tools.DateUtils;
+import com.bagbert.mtg.Constants;
+import com.bagbert.mtg.gcs.CsvWriter;
 import org.apache.commons.io.IOUtils;
 import org.jsoup.nodes.Document;
+import org.junit.Ignore;
 import org.junit.Test;
 
-import com.bagbert.commons.football.exec.ResultSet;
 import com.bagbert.commons.football.tools.JSoupUtils;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -33,7 +38,8 @@ public class DeckstatsDeckParserTest {
     assertNotNull(rs.getResults());
     assertFalse(rs.getResults().isEmpty());
     // assertEquals(20, rs.getResults().size());
-    assertEquals("1147701-knights-of-the-pentagram-table-17", rs.getFilename());
+    assertEquals(DateUtils.toYYYYMMDD(new Date())+"-1147701-knights-of-the-pentagram-table-17",
+        rs.getFilename());
 
     List<DeckstatsDeckCard> list = new ArrayList<>(rs.getResults());
     DeckstatsDeckCard card = list.get(0);
@@ -98,5 +104,18 @@ public class DeckstatsDeckParserTest {
     assertEquals("1124983", map.get("edit_deck_id"));
     assertEquals("2", map.get("deck_revision1"));
     assertEquals("1540908616", map.get("deck_updated"));
+  }
+
+  @Ignore
+  @Test
+  public void testLive() {
+    JSoupFetcher fetcher = new JSoupFetcher("https://deckstats.net/decks/13159/1054711-xantcha-commander/en");
+    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser();
+    ResultSetHandler<DeckstatsDeckCard> handler = new CsvWriter<>(Constants.DEFAULT_BUCKET,
+        DeckstatsDeckCard.class);
+
+    Executor<ResultSet<DeckstatsDeckCard>> executor = new FetchParseWriteExecutor<>(fetcher, parser,
+        handler);
+    ResultSet<DeckstatsDeckCard> rs = executor.execute();
   }
 }

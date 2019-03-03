@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.bagbert.commons.football.tools.DateUtils;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -85,15 +86,16 @@ public class DeckstatsDeckParser extends AbstractDeckstatsParser
     // addCards(root, "sideboard", cards);
     // addCards(root, "maybeboard", cards);
 
+    Date scrapeTime = new Date();
     Set<DeckstatsDeckCard> results = new ListOrderedSet<>();
     for (DeckstatsCard card : cards) {
       DeckstatsDeckCard deckCard = new DeckstatsDeckCard(deckName, deckId, userName, userId,
-          dateUpdated, deckRevision, deckCountTotal, deckCountNonBasic, deckCountBasicLands, card);
+          dateUpdated, deckRevision, deckCountTotal, deckCountNonBasic, deckCountBasicLands, card, scrapeTime);
       results.add(deckCard);
     }
 
     String path = super.buildPath();
-    return new MtgResultSet<>(path, results, deckIdName, String.valueOf(deckRevision));
+    return new MtgResultSet<>(path, results, DateUtils.toYYYYMMDD(scrapeTime), deckIdName, String.valueOf(deckRevision));
   }
 
   void addCards(JsonObject parent, String name, List<DeckstatsCard> results) {

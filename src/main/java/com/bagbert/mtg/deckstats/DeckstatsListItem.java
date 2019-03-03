@@ -28,7 +28,7 @@ public class DeckstatsListItem {
   @CsvDate("yyyyMMdd-HH:mm:ssXX")
   @CsvBindByPosition(position = 8)
   private Date lastUpdated;
-  @CsvDate("yyyyMMdd-HH:mm:ssXX")
+  @CsvDate("yyyy-MM-dd HH:mm:ssXX")
   @CsvBindByPosition(position = 9)
   private Date scrapeTime;
 

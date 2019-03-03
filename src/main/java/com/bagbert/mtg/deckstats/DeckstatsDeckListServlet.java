@@ -24,7 +24,7 @@ import com.bagbert.mtg.gcs.CsvWriter;
 public class DeckstatsDeckListServlet extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
-  private static final String COMMANDERS_LIST_URL = "https://deckstats.net/decks/f/edh-commander/?lng=en";
+  private static final String COMMANDERS_LIST_URL = Constants.ROOT_URL_DECKSTATS.concat("/decks/f/edh-commander/?lng=en");
   private static final String CONTAINS_CARD_URL_SUFFIX = "&search_title=&search_format=10&search_season=0&search_price_min=&search_price_max=&search_number_cards_main=&search_number_cards_sideboard=&search_cards[]=%s&search_tags=&search_age_max_days=0&search_age_max_days_custom=&search_order=updated,desc&utf8=";
 
   // web only serves up first 10000 decks (20 decks per page, 500 pages)

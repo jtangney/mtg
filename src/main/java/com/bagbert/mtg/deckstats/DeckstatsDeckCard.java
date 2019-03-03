@@ -40,6 +40,9 @@ public class DeckstatsDeckCard {
   @NestedCsv
   @CsvCustomBindByPosition(position = 9, converter = DeckstatsCardConverter.class)
   private DeckstatsCard card;
+  @CsvDate("yyyy-MM-dd HH:mm:ssXX")
+  @CsvBindByPosition(position = 10)
+  private Date scrapeTime;
 
   public DeckstatsDeckCard(String deckName, Integer deckId, String userName, Integer userId,
       Date dateUpdated, Integer deckRevision, Integer cardCountTotal, Integer cardCountNonBasic,
@@ -48,9 +51,9 @@ public class DeckstatsDeckCard {
       Boolean isMaybe, Boolean isFoil, Boolean isCustomSet, String castingCost, Integer cmc,
       Integer colourIdentity, String type, String superType, String rarity, Integer displaySetId,
       Double priceMiracle, Double priceMkm, Double priceTcgPlayer, Double priceCardHoarder,
-      Double priceCardKingdom) {
+      Double priceCardKingdom, Date scrapeTime) {
     this(deckName, deckId, userName, userId, dateUpdated, deckRevision, cardCountTotal,
-        cardCountNonBasic, cardCountBasicLands);
+        cardCountNonBasic, cardCountBasicLands, scrapeTime);
     this.card = new DeckstatsCard(cardName, qty, isValid, comment, setId, setString, override,
         isCommander, isSideboard, isMaybe, isFoil, isCustomSet, castingCost, cmc, colourIdentity,
         type, superType, rarity, displaySetId, priceMiracle, priceMkm, priceTcgPlayer,
@@ -59,15 +62,15 @@ public class DeckstatsDeckCard {
 
   public DeckstatsDeckCard(String deckName, Integer deckId, String userName, Integer userId,
       Date dateUpdated, Integer deckRevision, Integer cardCountTotal, Integer cardCountNonBasic,
-      Integer cardCountBasicLands, DeckstatsCard card) {
+      Integer cardCountBasicLands, DeckstatsCard card, Date scrapeTime) {
     this(deckName, deckId, userName, userId, dateUpdated, deckRevision, cardCountTotal,
-        cardCountNonBasic, cardCountBasicLands);
+        cardCountNonBasic, cardCountBasicLands, scrapeTime);
     this.card = card;
   }
 
   private DeckstatsDeckCard(String deckName, Integer deckId, String userName, Integer userId,
       Date dateUpdated, Integer deckRevision, Integer cardCountTotal, Integer cardCountNonBasic,
-      Integer cardCountBasicLands) {
+      Integer cardCountBasicLands, Date scrapeTime) {
     this.deckName = deckName;
     this.deckId = deckId;
     this.userName = userName;
@@ -77,6 +80,7 @@ public class DeckstatsDeckCard {
     this.cardCountTotal = cardCountTotal;
     this.cardCountNonBasic = cardCountNonBasic;
     this.cardCountBasicLands = cardCountBasicLands;
+    this.scrapeTime = scrapeTime;
   }
 
   public String getDeckName() {
@@ -213,6 +217,10 @@ public class DeckstatsDeckCard {
 
   public Double getPriceCardKingdom() {
     return card.getPriceCardKingdom();
+  }
+
+  public Date getScrapeTime() {
+    return this.scrapeTime;
   }
 
   public static class DeckstatsCardConverter extends NestedCsvConverter<DeckstatsCard> {

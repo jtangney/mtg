@@ -25,7 +25,7 @@ public class DeckstatsDeckListParserTest {
     DeckstatsDeckListParser parser = new DeckstatsDeckListParser();
     ResultSet<DeckstatsListItem> rs = parser.parse(doc);
     assertNotNull(rs);
-    assertEquals("deckstats-commander-decklists-page-1", rs.getFilename());
+    assertEquals(DateUtils.toYYYYMMDD(new Date())+"-page-1", rs.getFilename());
     assertEquals("deckstats/commander-decklists", rs.getPath());
 
     assertFalse(rs.getResults().isEmpty());

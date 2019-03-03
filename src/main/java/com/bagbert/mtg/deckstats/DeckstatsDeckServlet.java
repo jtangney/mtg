@@ -25,7 +25,7 @@ public class DeckstatsDeckServlet extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
 
-  private static String ROOT_URL = "https://deckstats.net";
+  private static String ROOT_URL = Constants.ROOT_URL_DECKSTATS;
   private static String DECK_ROOT_URL = ROOT_URL + "/decks/";
 
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
