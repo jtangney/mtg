@@ -11,4 +11,8 @@ public interface Constants {
 
   String SOURCE_DECKSTATS = "deckstats";
   String ROOT_URL_DECKSTATS =  "https://deckstats.net";
+
+  String SOURCE_GOLDFISH = "mtggoldfish";
+  String ROOT_URL_GOLDFISH =  "https://www.mtggoldfish.com";
+
 }

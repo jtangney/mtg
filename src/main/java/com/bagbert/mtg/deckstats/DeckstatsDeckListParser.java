@@ -30,7 +30,7 @@ public class DeckstatsDeckListParser extends AbstractDeckstatsParser
   }
 
   public DeckstatsDeckListParser(String cardName) {
-    super("commander-decklists", cardName);
+    super(Constants.SOURCE_DECKSTATS, "commander-decklists", cardName);
   }
 
   @Override
@@ -79,14 +79,6 @@ public class DeckstatsDeckListParser extends AbstractDeckstatsParser
       return null;
     }
     return Integer.parseInt(input);
-  }
-
-  String getPageNumber(String url) {
-    Matcher matcher = Pattern.compile("page=(\\d+)").matcher(url);
-    if (!matcher.find()) {
-      return "";
-    }
-    return matcher.group(1);
   }
 
   String retainOnlyDigits(String input) {

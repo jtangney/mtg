@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.bagbert.commons.football.tools.DateUtils;
+import com.bagbert.mtg.Constants;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -39,7 +40,7 @@ public class DeckstatsDeckParser extends AbstractDeckstatsParser
   }
 
   public DeckstatsDeckParser(String cardName) {
-    super("commander-decks", cardName);
+    super(Constants.SOURCE_DECKSTATS,"commander-decks", cardName);
   }
 
   @Override
