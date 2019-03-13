@@ -6,6 +6,5 @@ public class MtgUtils {
 
   public static String formatCardName(String cardName) {
     return StringUtils.removeAll(cardName, "[',]").replace(" ", "-").toLowerCase();
-
   }
 }

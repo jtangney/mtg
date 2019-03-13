@@ -1,0 +1,4 @@
+# Function dependencies, for example:
+# package>=version
+google-cloud-tasks
+google-cloud-storage

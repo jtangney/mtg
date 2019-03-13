@@ -1,6 +1,6 @@
 # IntelliJ
 .idea/
-.iml
+*.iml
 
 # Eclipse
 .classpath
@@ -13,3 +13,6 @@
 # Maven
 log/
 target/
+
+venv/
+*.pyc
