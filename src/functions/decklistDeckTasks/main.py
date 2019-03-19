@@ -25,18 +25,21 @@ def add_tasks(event, context):
     bucket = storage_client.get_bucket(file['bucket'])
     blob = bucket.get_blob(file['name'])
     contents = blob.download_as_string().decode('utf-8')
-    source = file['name'].split('/')[0]
+    fileparts = file['name'].split('/')
+    source = fileparts[0]
     # print(contents)
     string_io = StringIO(contents)
     dict_reader = csv.DictReader(string_io)
     count = 0
     for row in dict_reader:
-        # uri = "/deckstats/deck?deckUrl="+row["DeckUrl"]
         uri = "/{}/deck?deckUrl={}".format(source, row["DeckUrl"])
+        if len(fileparts) == 4:
+            uri += "&containsCard="+fileparts[2]
         task = {
             "app_engine_http_request": {
                 "http_method": "GET",
-                "relative_uri": uri
+                "relative_uri": uri,
+                # "scheduleTime": None,
             }
         }
         response = tasks_client.create_task(parent, task)

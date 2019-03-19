@@ -17,7 +17,6 @@ public class MtgResultSetTest {
     rs = new MtgResultSet<>("some/path", Collections.emptySet(), "another", "token");
     assertEquals("another-token", rs.getFilename());
     rs = new MtgResultSet<>("some/path", Collections.emptySet(), "another", "token", null);
-    // not actually what I wanted...
-    assertEquals("another-token-", rs.getFilename());
+    assertEquals("another-token", rs.getFilename());
   }
 }

@@ -1,6 +1,8 @@
 package com.bagbert.mtg;
 
+import java.util.Arrays;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -27,7 +29,8 @@ public class MtgResultSet<T> implements ResultSet<T> {
 
   @Override
   public String getFilename() {
-    return StringUtils.join(tokens, "-");
+    return Arrays.stream(tokens).filter(StringUtils::isNotBlank)
+        .collect(Collectors.joining("-"));
   }
 
   @Override

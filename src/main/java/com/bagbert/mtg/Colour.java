@@ -80,4 +80,12 @@ public enum Colour {
     return CollectionUtils.toString(list, "");
   }
 
+  public static boolean isColourCode(String input) {
+    for (Colour col: Colour.values()) {
+      if(col.code().equalsIgnoreCase(input)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
