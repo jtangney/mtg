@@ -1,4 +1,4 @@
-package com.bagbert.mtg;
+package com.bagbert.mtg.common;
 
 import com.bagbert.commons.football.exec.Fetcher;
 import com.bagbert.mtg.gcs.GcsHelper;

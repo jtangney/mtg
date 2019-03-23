@@ -10,7 +10,7 @@ from google.cloud import tasks_v2beta3
 
 
 gcs = None
-dir = 'mtggoldfish/commander-scraped'
+dir = 'mtggoldfish/commander-decklists-scraped'
 url_pattern = 'https://www.mtggoldfish.com/deck/custom?page={}&utf8=✓&mformat=commander&commander={}&commit=Search#paper'
 
 
@@ -46,6 +46,7 @@ def scrape_html(request):
 
 
 def write_to_gcs(html, bucketname, filename):
+    """Filenames of the form mtggoldfish/commander-decklists-scraped/$cardName/$date-$pageNo"""
     global gcs
     if not gcs:
         gcs = storage.Client()
@@ -78,4 +79,5 @@ async def get_page_html(url):
     page = await browser.newPage()
     await page.goto(url)
     html = await page.content()
+    await browser.close()
     return html

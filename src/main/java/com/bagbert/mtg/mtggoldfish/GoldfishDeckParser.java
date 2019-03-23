@@ -6,11 +6,9 @@ import com.bagbert.commons.football.tools.DateUtils;
 import com.bagbert.mtg.Colour;
 import com.bagbert.mtg.Constants;
 import com.bagbert.mtg.MtgResultSet;
-import com.bagbert.mtg.deckstats.AbstractDeckstatsParser;
-import com.bagbert.mtg.deckstats.DeckstatsDeckCard;
+import com.bagbert.mtg.common.AbstractDeckParser;
 import com.bagbert.mtg.utils.MtgUtils;
 import com.google.common.flogger.FluentLogger;
-import io.grpc.netty.shaded.io.netty.util.internal.StringUtil;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -23,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 
-public class GoldfishDeckParser extends AbstractDeckstatsParser
+public class GoldfishDeckParser extends AbstractDeckParser
     implements Parser<Document, GoldfishDeckCard> {
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
@@ -155,12 +153,6 @@ public class GoldfishDeckParser extends AbstractDeckstatsParser
     return sb.toString().toUpperCase();
   }
 
-  Double toDouble(String str) {
-    if (StringUtils.isEmpty(str)) {
-      return null;
-    }
-    return Double.parseDouble(str);
-  }
 
   List<String> descSectionParts(Element descSection) {
     return null;

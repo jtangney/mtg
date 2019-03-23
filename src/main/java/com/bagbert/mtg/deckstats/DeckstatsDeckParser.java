@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 import com.bagbert.commons.football.tools.DateUtils;
 import com.bagbert.mtg.Constants;
+import com.bagbert.mtg.common.AbstractDeckParser;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -29,7 +30,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class DeckstatsDeckParser extends AbstractDeckstatsParser
+public class DeckstatsDeckParser extends AbstractDeckParser
     implements Parser<Document, DeckstatsDeckCard> {
 
   private static final Logger LOG = Logger.getLogger(DeckstatsDeckParser.class.getName());

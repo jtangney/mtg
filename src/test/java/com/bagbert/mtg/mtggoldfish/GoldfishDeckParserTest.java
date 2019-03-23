@@ -112,6 +112,7 @@ public class GoldfishDeckParserTest {
   @Test
   public void testToColourIdentity() {
     GoldfishDeckParser parser = new GoldfishDeckParser();
+    assertNull(parser.toColourIdentity(null));
     assertEquals("R", parser.toColourIdentity("r"));
     assertEquals("R", parser.toColourIdentity("rr"));
     assertEquals("R", parser.toColourIdentity("2r"));

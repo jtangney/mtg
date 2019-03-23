@@ -7,6 +7,7 @@ import com.bagbert.commons.football.tools.JSoupUtils;
 import com.bagbert.mtg.deckstats.DeckstatsListItem;
 import org.jsoup.nodes.Document;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -64,9 +65,9 @@ public class GoldfishDeckListParserTest {
     assertEquals(1702972, parser.getDeckId("/deck/1702972").intValue());
   }
 
+  @Ignore
   @Test
   public void testFetch() {
-//    JSoupFetcher fetcher = new JSoupFetcher("https://www.mtggoldfish.com/deck/custom/commander?page=1#paper");
     JSoupFetcher fetcher = new JSoupFetcher("https://www.mtggoldfish.com/deck/custom?page=1&utf8=?&mformat=commander&commander=Xantcha,%20Sleeper%20Agent&commit=Search#paper");
     Document doc = fetcher.fetch();
     System.out.println(doc.toString());

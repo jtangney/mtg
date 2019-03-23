@@ -2,10 +2,8 @@ package com.bagbert.mtg.mtggoldfish;
 
 import com.bagbert.commons.football.exec.*;
 import com.bagbert.mtg.Constants;
-import com.bagbert.mtg.GcsFetcher;
 import com.bagbert.mtg.HttpUtils;
-import com.bagbert.mtg.deckstats.DeckstatsDeckListParser;
-import com.bagbert.mtg.deckstats.DeckstatsListItem;
+import com.bagbert.mtg.common.GcsFetcher;
 import com.bagbert.mtg.gcs.CsvWriter;
 import org.jsoup.nodes.Document;
 

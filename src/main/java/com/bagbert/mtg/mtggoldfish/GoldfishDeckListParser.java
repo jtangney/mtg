@@ -5,8 +5,7 @@ import com.bagbert.commons.football.exec.ResultSet;
 import com.bagbert.commons.football.tools.DateUtils;
 import com.bagbert.mtg.Constants;
 import com.bagbert.mtg.MtgResultSet;
-import com.bagbert.mtg.deckstats.AbstractDeckstatsParser;
-import com.bagbert.mtg.deckstats.DeckstatsListItem;
+import com.bagbert.mtg.common.AbstractDeckParser;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Document;
@@ -16,7 +15,7 @@ import org.jsoup.select.Elements;
 import java.util.Date;
 import java.util.Set;
 
-public class GoldfishDeckListParser extends AbstractDeckstatsParser
+public class GoldfishDeckListParser extends AbstractDeckParser
     implements Parser<Document, GoldfishListItem> {
 
   public GoldfishDeckListParser(String cardName) {

@@ -3,8 +3,7 @@ package com.bagbert.mtg.mtggoldfish;
 import com.bagbert.commons.football.exec.*;
 import com.bagbert.mtg.Constants;
 import com.bagbert.mtg.HttpUtils;
-import com.bagbert.mtg.deckstats.DeckstatsDeckCard;
-import com.bagbert.mtg.deckstats.DeckstatsDeckParser;
+import com.bagbert.mtg.common.FetchAndGcsWriter;
 import com.bagbert.mtg.gcs.CsvWriter;
 import org.jsoup.nodes.Document;
 
@@ -26,7 +25,8 @@ public class GoldfishDeckServlet extends HttpServlet {
     String deckUrlParam = HttpUtils.getParam(req, "deckUrl");
     String containsCard = HttpUtils.getParam(req, "containsCard");
     String deckUrl = format(deckUrlParam);
-    JSoupFetcher fetcher = new JSoupFetcher(deckUrl);
+    // fetch the HTML but also write it to GCS!
+    Fetcher<Document> fetcher = new FetchAndGcsWriter(deckUrl);
     Parser<Document, GoldfishDeckCard> parser = new GoldfishDeckParser(containsCard);
     ResultSetHandler<GoldfishDeckCard> handler = new CsvWriter<>(Constants.DEFAULT_BUCKET, GoldfishDeckCard.class);
 

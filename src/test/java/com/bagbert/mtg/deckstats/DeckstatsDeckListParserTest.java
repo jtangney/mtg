@@ -61,16 +61,6 @@ public class DeckstatsDeckListParserTest {
   }
 
   @Test
-  public void testGetPageNumber() {
-    DeckstatsDeckListParser parser = new DeckstatsDeckListParser();
-    assertEquals("1",
-        parser.getPageNumber("https://deckstats.net/decks/f/edh-commander/?lng=en&page=1"));
-    assertEquals("499",
-        parser.getPageNumber("https://deckstats.net/decks/f/edh-commander/?lng=en&page=499"));
-    assertEquals("", parser.getPageNumber("https://deckstats.net/decks/f/edh-commander/?lng=en"));
-  }
-
-  @Test
   public void testRetainOnlyDigits() {
     DeckstatsDeckListParser parser = new DeckstatsDeckListParser();
     assertEquals("1234", parser.retainOnlyDigits("$1,234"));

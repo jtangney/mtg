@@ -1,7 +1,5 @@
 package com.bagbert.mtg.deckstats;
 
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
@@ -10,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.bagbert.mtg.Constants;
-import com.bagbert.mtg.utils.MtgUtils;
+import com.bagbert.mtg.common.AbstractDeckParser;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
@@ -22,7 +20,7 @@ import com.bagbert.commons.football.exec.Parser;
 import com.bagbert.commons.football.exec.ResultSet;
 import com.bagbert.mtg.MtgResultSet;
 
-public class DeckstatsDeckListParser extends AbstractDeckstatsParser
+public class DeckstatsDeckListParser extends AbstractDeckParser
     implements Parser<Document, DeckstatsListItem> {
 
   public DeckstatsDeckListParser() {
