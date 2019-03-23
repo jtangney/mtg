@@ -12,5 +12,6 @@ public class MtgUtilsTest {
     assertEquals("xantcha-sleeper-agent", MtgUtils.formatCardName("Xantcha, Sleeper Agent"));
     assertEquals("sol-ring", MtgUtils.formatCardName("Sol Ring"));
     assertEquals("wars-toll", MtgUtils.formatCardName("War's Toll"));
+    assertEquals("redblack-vampires", MtgUtils.formatCardName("Red/Black Vampires"));
   }
 }

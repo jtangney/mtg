@@ -8,6 +8,6 @@ public class MtgUtils {
     if (StringUtils.isEmpty(cardName)) {
       return null;
     }
-    return StringUtils.removeAll(cardName, "[',]").replace(" ", "-").toLowerCase();
+    return StringUtils.removeAll(cardName, "[',/]").replace(" ", "-").toLowerCase();
   }
 }
