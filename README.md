@@ -1,10 +1,10 @@
 # Magic: The Gathering
 This project contains code to scrape and parse various sources of MTG data.
 
-##Deckstats
+## Deckstats
 TBC
 
-##MTG Goldfish
+## MTG Goldfish
 Logic flow:
 * HTTP-triggered Cloud Function to scrape decklists. 
   * Uses Pyppeteer as JS-rendered.
@@ -16,6 +16,7 @@ Logic flow:
   * Adds a Cloud Task for each individual deck in the list
 * Cloud Tasks trigger AppEngine to fetch-parse-write each individual deck
   * Uses plain-ol' JSoup as standard HTML
+  * Raw HTML stored in GCS (at Fetch step)
   * Parsed deck CSV stored in GCS bucket 
 
 Notes:  
