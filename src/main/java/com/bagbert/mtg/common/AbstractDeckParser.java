@@ -1,4 +1,4 @@
-package com.bagbert.mtg.deckstats;
+package com.bagbert.mtg.common;
 
 import com.bagbert.mtg.Constants;
 import com.bagbert.mtg.utils.MtgUtils;
