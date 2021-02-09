@@ -23,9 +23,26 @@ import com.google.gson.JsonParser;
 
 public class DeckstatsDeckParserTest {
 
+  // discovered Feb 2021
   @Test
-  public void testParse() throws Exception {
-    Document doc = JSoupUtils.getDocumentFromResource(this.getClass(), "deckstats-deck-1.htm",
+  public void testParse_newFormat() throws Exception {
+    Document doc = JSoupUtils.getDocumentFromResource(this.getClass(), "deckstats-deck-2_newFormat.htm",
+        "UTF-8", "https://deckstats.net/decks/139919/1612377-the-gitrog-monster/en");
+    assertNotNull(doc);
+
+    DeckstatsDeckParser parser = new DeckstatsDeckParser();
+    String json = parser.getDeckJson(doc);
+    assertNotNull(json);
+
+    ResultSet<DeckstatsDeckCard> rs = parser.parse(doc);
+    assertNotNull(rs);
+    assertNotNull(rs.getResults());
+    assertFalse(rs.getResults().isEmpty());
+  }
+
+  @Test
+  public void testParse_oldFormat() throws Exception {
+    Document doc = JSoupUtils.getDocumentFromResource(this.getClass(), "deckstats-deck-1_oldFormat.htm",
         "UTF-8", "https://deckstats.net/decks/102796/1147701-knights-of-the-pentagram-table/en");
     assertNotNull(doc);
 

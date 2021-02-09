@@ -48,8 +48,13 @@ public class DeckstatsDeckListServlet extends HttpServlet {
   String buildUrl(HttpServletRequest req) {
     int page = HttpUtils.getIntParam(req, "page", 1);
     String containsCard = HttpUtils.getParam(req, "containsCard");
-    if (containsCard != null) {
-      String urlSuffix = String.format(CONTAINS_CARD_URL_SUFFIX, containsCard);
+    return buildUrl(containsCard, page);
+  }
+
+  // used by test
+  static String buildUrl(String cardName, int page) {
+    if (cardName != null) {
+      String urlSuffix = String.format(CONTAINS_CARD_URL_SUFFIX, cardName);
       return String.format("%s%s&page=%d", COMMANDERS_LIST_URL, urlSuffix, page);
     }
     return String.format("%s&page=%d", COMMANDERS_LIST_URL, page);

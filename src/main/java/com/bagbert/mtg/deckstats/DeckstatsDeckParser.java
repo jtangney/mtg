@@ -50,26 +50,37 @@ public class DeckstatsDeckParser extends AbstractDeckParser
     if (json == null) {
       throw new RuntimeException("Failed to find deck json!!");
     }
+    JsonParser jsonParser = new JsonParser();
+    JsonObject root = jsonParser.parse(json).getAsJsonObject();
 
+    Integer userId, deckId, deckRevision;
+    Date dateUpdated;
+    // old format
     Map<String, String> metadata = getDeckMetadata(input);
-    Integer userId = Integer.valueOf(metadata.get("deck_owner_id"));
-    Integer deckId = Integer.valueOf(metadata.get("deck_id"));
-    Integer deckRevision = Integer.valueOf(metadata.get("deck_revision1"));
-    long timestamp = Long.parseLong(metadata.get("deck_updated"));
-    Date dateUpdated = Date.from(Instant.ofEpochSecond(timestamp));
+    if (metadata != null && metadata.containsKey("deck_id")) {
+      userId = Integer.valueOf(metadata.get("deck_owner_id"));
+      deckId = Integer.valueOf(metadata.get("deck_id"));
+      deckRevision = Integer.valueOf(metadata.get("deck_revision1"));
+      long timestamp = Long.parseLong(metadata.get("deck_updated"));
+      dateUpdated = Date.from(Instant.ofEpochSecond(timestamp));
+    }
+    // new format (from Jan 2021)
+    else {
+      userId = getInteger(root, "owner_id");
+      deckId = getInteger(root, "saved_id");
+      deckRevision = getInteger(root, "revision");
+      long timestamp = getLong(root, "updated");
+      dateUpdated = Date.from(Instant.ofEpochSecond(timestamp));
+    }
 
     String url = input.location();
     String[] elements = url.split("/");
     String deckIdName = elements[5];
-    // int deckId = Integer.parseInt(deckIdName.split("-")[0]);
-    // int userId = Integer.parseInt(elements[4]);
 
     String userNameTitle = input.select("div#deck_folder_subtitle").first().text();
     String suffix = StringUtils.substringAfter(userNameTitle, "in ");
     String userName = StringUtils.substringBefore(suffix, "'s Decks");
 
-    JsonParser jsonParser = new JsonParser();
-    JsonObject root = jsonParser.parse(json).getAsJsonObject();
     String deckName = root.get("name").getAsString();
     Integer deckCountTotal = getInteger(root, "number_main");
     Integer deckCountNonBasic = getInteger(root, "number_main_nonbasic");
@@ -97,7 +108,8 @@ public class DeckstatsDeckParser extends AbstractDeckParser
     }
 
     String path = super.buildPath();
-    return new MtgResultSet<>(path, results, DateUtils.toYYYYMMDD(scrapeTime), deckIdName, String.valueOf(deckRevision));
+    return new MtgResultSet<>(path, results, DateUtils.toYYYYMMDD(scrapeTime),
+        deckIdName, String.valueOf(deckRevision));
   }
 
   void addCards(JsonObject parent, String name, List<DeckstatsCard> results) {
@@ -184,6 +196,13 @@ public class DeckstatsDeckParser extends AbstractDeckParser
     return obj.get(field).getAsInt();
   }
 
+  Long getLong(JsonObject obj, String field) {
+    if (!hasField(obj, field)) {
+      return null;
+    }
+    return obj.get(field).getAsLong();
+  }
+
   boolean hasField(JsonObject obj, String field) {
     return obj.has(field) && !obj.get(field).isJsonNull();
   }
@@ -216,8 +235,17 @@ public class DeckstatsDeckParser extends AbstractDeckParser
   String getDeckJson(Document input) {
     Elements scripts = input.select("script");
     for (Element script : scripts) {
+      // old format
       if (script.data().contains("deck_json =")) {
         return extractJson(script.data());
+      }
+      // new format (from Jan2021, tho there was a big gap!)
+      if (script.data().contains("init_deck_data")) {
+        Matcher matcher = Pattern.compile("init_deck_data\\((\\{.*?\\})\\)").matcher(script.data());
+        if (matcher.find()) {
+          return matcher.group(1);
+        }
+        return null;
       }
     }
     return null;

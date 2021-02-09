@@ -8,10 +8,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.bagbert.commons.football.exec.*;
+import com.bagbert.mtg.Constants;
+import com.bagbert.mtg.gcs.CsvWriter;
 import org.jsoup.nodes.Document;
+import org.junit.Ignore;
 import org.junit.Test;
 
-import com.bagbert.commons.football.exec.ResultSet;
 import com.bagbert.commons.football.tools.DateUtils;
 import com.bagbert.commons.football.tools.JSoupUtils;
 
@@ -93,4 +96,20 @@ public class DeckstatsDeckListParserTest {
     assertEquals(sdf.parse("20190110-00:00:00Z"), parser.parseLastUpdated("10 days ago", start));
     assertEquals(sdf.parse("20181121-00:00:00Z"), parser.parseLastUpdated("2 months ago", start));
   }
+
+//  @Ignore
+  @Test
+  public void testLive() {
+    String commander = "Prossh, Skyraider of Kher";
+    String url = DeckstatsDeckListServlet.buildUrl(commander, 1);
+    JSoupFetcher fetcher = new JSoupFetcher(url);
+    Parser<Document, DeckstatsListItem> parser = new DeckstatsDeckListParser(commander);
+    ResultSetHandler<DeckstatsListItem> writer = new CsvWriter<>(Constants.DEFAULT_BUCKET,
+        DeckstatsListItem.class);
+
+    Executor<ResultSet<DeckstatsListItem>> executor = new FetchParseWriteExecutor<>(fetcher, parser,
+        writer);
+    executor.execute();
+  }
+
 }

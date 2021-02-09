@@ -36,6 +36,10 @@ public class DeckstatsDeckListParser extends AbstractDeckParser
     String pageNumber = this.getPageNumber(input.location());
     Element listTable = input.select("table.decks_list").first();
     Elements rows = listTable.select("tr.touch_row");
+    // new format
+    if (rows.isEmpty()) {
+      rows = listTable.select("tr.deck_row");
+    }
     Set<DeckstatsListItem> items = new ListOrderedSet<>();
     Date scrapeTime = new Date();
     for (Element row : rows) {
