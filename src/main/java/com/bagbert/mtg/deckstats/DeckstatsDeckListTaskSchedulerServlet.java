@@ -23,7 +23,10 @@ import java.time.Instant;
 
 /**
  * Adds Cloud Tasks to fetch a range Deckstats deck list pages over a defined period.
+ * i.e. paginates through the pages of deck lists.
  * Essentially allows us to wait a few seconds before fetching next page
+ *
+ * /deckstats/listscheduler?containsCard=someCmdr&endPage=N
  */
 @WebServlet("deckstats/listscheduler")
 public class DeckstatsDeckListTaskSchedulerServlet extends HttpServlet {
@@ -43,7 +46,8 @@ public class DeckstatsDeckListTaskSchedulerServlet extends HttpServlet {
     try (CloudTasksClient client = CloudTasksClient.create()) {
       int count = 0;
       for (int i = startPage; i <= endPage; i++) {
-        String queuePath = QueueName.of(Constants.DEFAULT_PROJECT, Constants.DEFAULT_REGION, Constants.DECKLIST_QUEUE).toString();
+        String queuePath = QueueName.of(Constants.DEFAULT_PROJECT,
+            Constants.DEFAULT_REGION, Constants.DECKLIST_QUEUE).toString();
         String pageUri = buildRelativeUri(i, containsCard);
         Task.Builder taskBuilder = Task.newBuilder()
             .setAppEngineHttpRequest(AppEngineHttpRequest.newBuilder()

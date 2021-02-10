@@ -32,8 +32,9 @@ public class DeckstatsDeckServlet extends HttpServlet {
       throws ServletException, IOException {
     String deckUrlParam = HttpUtils.getParam(req, "deckUrl");
     String deckUrl = format(deckUrlParam);
+    String containsCard = HttpUtils.getParam(req, "containsCard");
     JSoupFetcher fetcher = new JSoupFetcher(deckUrl);
-    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser();
+    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser(containsCard);
     ResultSetHandler<DeckstatsDeckCard> handler = new CsvWriter<>(Constants.DEFAULT_BUCKET,
         DeckstatsDeckCard.class);
 

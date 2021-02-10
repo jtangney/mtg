@@ -20,6 +20,18 @@ import com.bagbert.mtg.Constants;
 import com.bagbert.mtg.HttpUtils;
 import com.bagbert.mtg.gcs.CsvWriter;
 
+/**
+ * Fetch-parse-writes a list of Commander decks. Writes to GCS when deployed on
+ * AppEngine, otherwise just logs CSV.
+" param. Can also specify a "page" param.
+ *
+ * Standard usage is to specify the Commander via the "containsCard
+ * e.g. See the example page below, list of decks with Prossh as commander
+ * https://deckstats.net/decks/f/edh-commander/?search_order=updated%2Cdesc&search_cards_commander[]=Prossh%2C+Skyraider+of+Kher&lng=en&page=1
+ *
+ * However, typically usage is to call the /deckstats/listscheduler?containCard=X rather
+ * than call this directly. This paginates through the full list.
+ */
 @WebServlet("deckstats/list")
 public class DeckstatsDeckListServlet extends HttpServlet {
 

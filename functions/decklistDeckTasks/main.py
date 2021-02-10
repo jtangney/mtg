@@ -3,7 +3,10 @@ from io import StringIO
 import logging
 
 from google.cloud import storage
-from google.cloud import tasks_v2beta3
+from google.cloud import tasks
+
+gcs = None
+
 
 def add_tasks(event, context):
     """Triggered by upload of decklist file to a Cloud Storage bucket.
@@ -17,13 +20,17 @@ def add_tasks(event, context):
     logging.info('Processing GCS file: '+file['name'])
 
     # cloud tasks
-    tasks_client = tasks_v2beta3.CloudTasksClient()
+    tasks_client = tasks.CloudTasksClient()
     parent = tasks_client.queue_path("jt-mtg", "europe-west1", "deck-queue")
 
+    # lazy init
+    global gcs
+    if not gcs:
+        gcs = storage.Client()
+
     # get the file from GCS
-    storage_client = storage.Client()
-    bucket = storage_client.get_bucket(file['bucket'])
-    blob = bucket.get_blob(file['name'])
+    bucket = storage.Bucket(name=file['bucket'], client=gcs)
+    blob = bucket.blob(file['name'])
     contents = blob.download_as_string().decode('utf-8')
     fileparts = file['name'].split('/')
     source = fileparts[0]
@@ -42,6 +49,6 @@ def add_tasks(event, context):
                 # "scheduleTime": None,
             }
         }
-        response = tasks_client.create_task(parent, task)
+        response = tasks_client.create_task(parent=parent, task=task)
         count += 1
     logging.info("Added {} {} tasks".format(count, source))
