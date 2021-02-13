@@ -126,7 +126,9 @@ public class DeckstatsDeckParserTest {
   @Ignore
   @Test
   public void testLive() {
-    JSoupFetcher fetcher = new JSoupFetcher("https://deckstats.net/decks/13159/1054711-xantcha-commander/en");
+    //String url = "https://deckstats.net/decks/13159/1054711-xantcha-commander/en";
+    String url = "https://deckstats.net/decks/121515/1161952-prossh-eats-things/en";
+    JSoupFetcher fetcher = new JSoupFetcher(url);
     Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser();
     ResultSetHandler<DeckstatsDeckCard> handler = new CsvWriter<>(Constants.DEFAULT_BUCKET,
         DeckstatsDeckCard.class);

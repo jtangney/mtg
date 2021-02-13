@@ -40,8 +40,8 @@ public class DeckstatsDeckParser extends AbstractDeckParser
     this(null);
   }
 
-  public DeckstatsDeckParser(String cardName) {
-    super(Constants.SOURCE_DECKSTATS,"commander-decks", cardName);
+  public DeckstatsDeckParser(String commanderName) {
+    super(Constants.SOURCE_DECKSTATS,"commander-decks", commanderName);
   }
 
   @Override
@@ -144,7 +144,7 @@ public class DeckstatsDeckParser extends AbstractDeckParser
       }
       JsonObject data = card.get("data").getAsJsonObject();
       String castingCost = getString(data, "cost");
-      Integer cmc = getInteger(data, "cc");
+      Integer cmc = getInteger(data, "cc", "converted_cost");
       Integer colourIdentity = getInteger(data, "color_identity");
       String type = getString(data, "type");
       String superType = getString(data, "supertype");
@@ -187,6 +187,16 @@ public class DeckstatsDeckParser extends AbstractDeckParser
       return null;
     }
     return obj.get(field).getAsDouble();
+  }
+
+  Integer getInteger(JsonObject obj, String field1, String field2) {
+    if (hasField(obj, field1)) {
+      return obj.get(field1).getAsInt();
+    }
+    if (hasField(obj, field2)) {
+      return obj.get(field2).getAsInt();
+    }
+    return null;
   }
 
   Integer getInteger(JsonObject obj, String field) {
