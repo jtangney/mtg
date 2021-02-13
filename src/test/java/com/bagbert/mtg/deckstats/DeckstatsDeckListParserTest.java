@@ -97,11 +97,11 @@ public class DeckstatsDeckListParserTest {
     assertEquals(sdf.parse("20181121-00:00:00Z"), parser.parseLastUpdated("2 months ago", start));
   }
 
-//  @Ignore
+  @Ignore
   @Test
   public void testLive() {
     String commander = "Prossh, Skyraider of Kher";
-    String url = DeckstatsDeckListServlet.buildUrl(commander, 1);
+    String url = DeckstatsDeckListServlet.buildUrl(commander, null, 1);
     JSoupFetcher fetcher = new JSoupFetcher(url);
     Parser<Document, DeckstatsListItem> parser = new DeckstatsDeckListParser(commander);
     ResultSetHandler<DeckstatsListItem> writer = new CsvWriter<>(Constants.DEFAULT_BUCKET,

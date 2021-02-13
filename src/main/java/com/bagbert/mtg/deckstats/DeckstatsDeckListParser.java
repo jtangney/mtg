@@ -27,8 +27,8 @@ public class DeckstatsDeckListParser extends AbstractDeckParser
     this(null);
   }
 
-  public DeckstatsDeckListParser(String cardName) {
-    super(Constants.SOURCE_DECKSTATS, "commander-decklists", cardName);
+  public DeckstatsDeckListParser(String commanderName) {
+    super(Constants.SOURCE_DECKSTATS, "commander-decklists", commanderName);
   }
 
   @Override

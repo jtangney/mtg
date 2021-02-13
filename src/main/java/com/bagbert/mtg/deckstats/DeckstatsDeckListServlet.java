@@ -36,8 +36,15 @@ import com.bagbert.mtg.gcs.CsvWriter;
 public class DeckstatsDeckListServlet extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
-  private static final String COMMANDERS_LIST_URL = Constants.ROOT_URL_DECKSTATS.concat("/decks/f/edh-commander/?lng=en");
-  private static final String CONTAINS_CARD_URL_SUFFIX = "&search_title=&search_format=10&search_season=0&search_price_min=&search_price_max=&search_number_cards_main=&search_number_cards_sideboard=&search_cards[]=%s&search_tags=&search_age_max_days=0&search_age_max_days_custom=&search_order=updated,desc&utf8=";
+  private static final String COMMANDERS_LIST_URL = Constants.ROOT_URL_DECKSTATS.concat(
+      "/decks/f/edh-commander/?lng=en");
+
+  // use these request params to search decks that contain paricular cards, or
+  // that have a particular commander. Can be used together
+  private static final String CONTAINS_CARD_SEARCH_PARAM = "&search_cards[]=%s";
+  private static final String WITH_COMMANDER_SEARCH_PARAM = "&search_cards_commander[]=%s";
+  // need to also include all the other (default) search params
+  private static final String DEFAULT_SEARCH_PARAMS = "&search_title=&search_format=10&search_season=0&search_price_min=&search_price_max=&search_number_cards_main=&search_number_cards_sideboard=&search_tags=&search_age_max_days=0&search_age_max_days_custom=&search_order=updated,desc&utf8=";
 
   // web only serves up first 10000 decks (20 decks per page, 500 pages)
   public static int MAX_PAGES = 500;
@@ -47,6 +54,7 @@ public class DeckstatsDeckListServlet extends HttpServlet {
     String url = buildUrl(req);
     System.out.println(url);
     String containsCard = HttpUtils.getParam(req, "containsCard");
+    String withCommander = HttpUtils.getParam(req, "commander");
     JSoupFetcher fetcher = new JSoupFetcher(url);
     Parser<Document, DeckstatsListItem> parser = new DeckstatsDeckListParser(containsCard);
     ResultSetHandler<DeckstatsListItem> writer = new CsvWriter<>(Constants.DEFAULT_BUCKET,
@@ -60,15 +68,22 @@ public class DeckstatsDeckListServlet extends HttpServlet {
   String buildUrl(HttpServletRequest req) {
     int page = HttpUtils.getIntParam(req, "page", 1);
     String containsCard = HttpUtils.getParam(req, "containsCard");
-    return buildUrl(containsCard, page);
+    String withCommander = HttpUtils.getParam(req, "commander");
+    return buildUrl(withCommander, containsCard, page);
   }
 
   // used by test
-  static String buildUrl(String cardName, int page) {
-    if (cardName != null) {
-      String urlSuffix = String.format(CONTAINS_CARD_URL_SUFFIX, cardName);
-      return String.format("%s%s&page=%d", COMMANDERS_LIST_URL, urlSuffix, page);
+  static String buildUrl(String commanderName, String cardName, int page) {
+    String url = COMMANDERS_LIST_URL;
+    if (commanderName != null) {
+      String cmdrSearch = String.format(WITH_COMMANDER_SEARCH_PARAM, commanderName);
+      url = url.concat(cmdrSearch);
     }
-    return String.format("%s&page=%d", COMMANDERS_LIST_URL, page);
+    if (cardName != null) {
+      String cardSearch = String.format(CONTAINS_CARD_SEARCH_PARAM, cardName);
+      url = url.concat(cardSearch);
+    }
+    String pageSuffix = String.format("&page=%d", page);
+    return url.concat(DEFAULT_SEARCH_PARAMS).concat(pageSuffix);
   }
 }
