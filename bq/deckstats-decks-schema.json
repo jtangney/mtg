@@ -1,0 +1,171 @@
+[
+  {
+    "mode": "NULLABLE",
+    "name": "DeckName",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "DeckId",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "UserName",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "UserId",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "DateUpdated",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "DeckRevision",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CardCountTotal",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CardCountNonBasic",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CardCountBasicLands",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CardName",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Qty",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "IsValid",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Comment",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "SetId",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "SetString",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Override",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "IsCommander",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "IsSideboard",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "IsMaybe",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "IsFoil",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "IsCustomSet",
+    "type": "BOOLEAN"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "CastingCost",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Cmc",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "ColourIdentity",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Type",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "SuperType",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "Rarity",
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "DisplaySetId",
+    "type": "INTEGER"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PriceMiracle",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PriceMkm",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PriceTcgPlayer",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PriceCardHoarder",
+    "type": "FLOAT"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "PriceCardKingdom",
+    "type": "FLOAT"
+  },
+  {
+    "name": "ScrapeTime",
+    "type": "TIMESTAMP"
+  }
+]

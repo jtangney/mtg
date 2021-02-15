@@ -41,7 +41,7 @@ def add_tasks(event, context):
     for row in dict_reader:
         uri = "/{}/deck?deckUrl={}".format(source, row["DeckUrl"])
         if len(fileparts) == 4:
-            uri += "&containsCard="+fileparts[2]
+            uri += "&commander="+fileparts[2]
         task = {
             "app_engine_http_request": {
                 "http_method": "GET",
