@@ -26,7 +26,7 @@ import java.time.Instant;
  * i.e. paginates through the pages of deck lists.
  * Essentially allows us to wait a few seconds before fetching next page
  *
- * /deckstats/listscheduler?containsCard=someCmdr&endPage=N
+ * /deckstats/listscheduler?commander=someCmdr&endPage=N
  */
 @WebServlet("deckstats/listscheduler")
 public class DeckstatsDeckListTaskSchedulerServlet extends HttpServlet {
@@ -41,6 +41,7 @@ public class DeckstatsDeckListTaskSchedulerServlet extends HttpServlet {
     int startPage = HttpUtils.getIntParam(req, "startPage", 1);
     int endPage = HttpUtils.getIntParam(req, "endPage", -1);
     int delay = HttpUtils.getIntParam(req, "delay", 20);
+    String commanderCard = HttpUtils.getParam(req, "commander");
     String containsCard = HttpUtils.getParam(req, "containsCard");
 
     try (CloudTasksClient client = CloudTasksClient.create()) {
@@ -48,7 +49,7 @@ public class DeckstatsDeckListTaskSchedulerServlet extends HttpServlet {
       for (int i = startPage; i <= endPage; i++) {
         String queuePath = QueueName.of(Constants.DEFAULT_PROJECT,
             Constants.DEFAULT_REGION, Constants.DECKLIST_QUEUE).toString();
-        String pageUri = buildRelativeUri(i, containsCard);
+        String pageUri = buildRelativeUri(i, commanderCard, containsCard);
         Task.Builder taskBuilder = Task.newBuilder()
             .setAppEngineHttpRequest(AppEngineHttpRequest.newBuilder()
                 .setRelativeUri(pageUri).setHttpMethod(HttpMethod.GET).build());
@@ -62,10 +63,14 @@ public class DeckstatsDeckListTaskSchedulerServlet extends HttpServlet {
     }
   }
 
-  String buildRelativeUri(int page, String containsCard) throws UnsupportedEncodingException {
+  String buildRelativeUri(int page, String commander, String containsCard)
+      throws UnsupportedEncodingException {
     String uri = String.format("/deckstats/list?page=%d", page);
+    if (!StringUtils.isEmpty(commander)) {
+      uri = uri.concat("&commander=").concat(URLEncoder.encode(commander, "UTF-8"));
+    }
     if (!StringUtils.isEmpty(containsCard)) {
-      return String.format("%s&containsCard=%s", uri, URLEncoder.encode(containsCard, "UTF-8"));
+      uri = uri.concat("&containsCard=").concat(URLEncoder.encode(containsCard, "UTF-8"));
     }
     return uri;
   }

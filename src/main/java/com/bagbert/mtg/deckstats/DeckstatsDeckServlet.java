@@ -20,6 +20,11 @@ import com.bagbert.mtg.Constants;
 import com.bagbert.mtg.HttpUtils;
 import com.bagbert.mtg.gcs.CsvWriter;
 
+/**
+ * Fetch-parse-writes a single Deckstats deck.
+ * URL to fetch passed as 'deckUrl' param. Commander name passed
+ * optionally passed as 'commander' param
+ */
 @WebServlet("deckstats/deck")
 public class DeckstatsDeckServlet extends HttpServlet {
 
@@ -32,9 +37,9 @@ public class DeckstatsDeckServlet extends HttpServlet {
       throws ServletException, IOException {
     String deckUrlParam = HttpUtils.getParam(req, "deckUrl");
     String deckUrl = format(deckUrlParam);
-    String containsCard = HttpUtils.getParam(req, "containsCard");
+    String commander = HttpUtils.getParam(req, "commander");
     JSoupFetcher fetcher = new JSoupFetcher(deckUrl);
-    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser(containsCard);
+    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser(commander);
     ResultSetHandler<DeckstatsDeckCard> handler = new CsvWriter<>(Constants.DEFAULT_BUCKET,
         DeckstatsDeckCard.class);
 

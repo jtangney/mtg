@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,6 +23,8 @@ import com.bagbert.mtg.MtgResultSet;
 
 public class DeckstatsDeckListParser extends AbstractDeckParser
     implements Parser<Document, DeckstatsListItem> {
+
+  private static final Logger LOG = Logger.getLogger(DeckstatsDeckParser.class.getName());
 
   public DeckstatsDeckListParser() {
     this(null);

@@ -25,11 +25,12 @@ import com.bagbert.mtg.gcs.CsvWriter;
  * AppEngine, otherwise just logs CSV.
 " param. Can also specify a "page" param.
  *
- * Standard usage is to specify the Commander via the "containsCard
+ * Standard usage is to specify the Commander via the "commander" request param.
  * e.g. See the example page below, list of decks with Prossh as commander
  * https://deckstats.net/decks/f/edh-commander/?search_order=updated%2Cdesc&search_cards_commander[]=Prossh%2C+Skyraider+of+Kher&lng=en&page=1
+ * Can also specify additional search cards via the "containsCard" param.
  *
- * However, typically usage is to call the /deckstats/listscheduler?containCard=X rather
+ * Note that typical usage is to call the /deckstats/listscheduler?commander=X rather
  * than call this directly. This paginates through the full list.
  */
 @WebServlet("deckstats/list")
@@ -56,7 +57,7 @@ public class DeckstatsDeckListServlet extends HttpServlet {
     String containsCard = HttpUtils.getParam(req, "containsCard");
     String withCommander = HttpUtils.getParam(req, "commander");
     JSoupFetcher fetcher = new JSoupFetcher(url);
-    Parser<Document, DeckstatsListItem> parser = new DeckstatsDeckListParser(containsCard);
+    Parser<Document, DeckstatsListItem> parser = new DeckstatsDeckListParser(withCommander);
     ResultSetHandler<DeckstatsListItem> writer = new CsvWriter<>(Constants.DEFAULT_BUCKET,
         DeckstatsListItem.class);
 
