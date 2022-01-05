@@ -123,18 +123,21 @@ public class DeckstatsDeckParserTest {
     assertEquals("1540908616", map.get("deck_updated"));
   }
 
-  @Ignore
+//  @Ignore
   @Test
   public void testLive() {
     //String url = "https://deckstats.net/decks/13159/1054711-xantcha-commander/en";
     String url = "https://deckstats.net/decks/121515/1161952-prossh-eats-things/en";
+    // note commander used only to build GCS filepath
+    String commander = "Prossh, Skyraider of Kher";
     JSoupFetcher fetcher = new JSoupFetcher(url);
-    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser();
+    Parser<Document, DeckstatsDeckCard> parser = new DeckstatsDeckParser(commander);
     ResultSetHandler<DeckstatsDeckCard> handler = new CsvWriter<>(Constants.DEFAULT_BUCKET,
         DeckstatsDeckCard.class);
 
     Executor<ResultSet<DeckstatsDeckCard>> executor = new FetchParseWriteExecutor<>(fetcher, parser,
         handler);
     ResultSet<DeckstatsDeckCard> rs = executor.execute();
+    System.out.println(String.format("%s/%s", rs.getPath(), rs.getFilename()));
   }
 }
